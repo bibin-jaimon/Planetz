@@ -37,6 +37,7 @@ extension BaseRequestAdapter {
         guard let components: URLComponents = buildGetUrlComponent(urlString: requestURLString) else { return nil }
         guard let url = components.url else { return nil }
         var request: URLRequest = URLRequest(url: url)
+        request.setValue("Content-Type", forHTTPHeaderField: "application/json")
         request.httpMethod = "GET"
         return request
     }

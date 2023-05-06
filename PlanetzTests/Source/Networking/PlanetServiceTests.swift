@@ -9,9 +9,13 @@ import XCTest
 @testable import Planetz
 
 final class PlanetServiceTests: XCTestCase {
+    
+    //API success
+    //API failure
 
-    func testExample() async throws {
-        let environment = DefaultEnvironment()
+    func testFetchPlanets_Success() async throws {
+        let environment = MockEnvironment()
+        
         let networking = Networking(session: URLSession.shared)
         
         let client = PlanetServiceClient(
@@ -19,7 +23,8 @@ final class PlanetServiceTests: XCTestCase {
             networking: networking
         )
         
-        let planets = await client.fetchPlanets(path: "/planets")
+        let _ = await client.fetchPlanets()
+        
     }
 
 }

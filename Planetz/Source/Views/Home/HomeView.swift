@@ -8,6 +8,13 @@
 import UIKit
 
 class HomeView: UIView {
+    
+    let tableView: UITableView = {
+        let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     init() {
         super.init(frame: .zero)
         backgroundColor = .red
@@ -15,5 +22,15 @@ class HomeView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func update(planets: [Planet]) {
+        DispatchQueue.main.async {
+            
+        }
+    }
+    
+    func isLoadingView(visible: Bool) {
+        
     }
 }

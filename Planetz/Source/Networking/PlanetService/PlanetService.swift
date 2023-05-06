@@ -7,20 +7,25 @@
 
 import Foundation
 
-class PlanetServiceClient {
+protocol PlanetService {
+    init(environment: Environment, networking: Networking)
+    func fetchPlanets() async -> [Planet]
+}
+
+class PlanetServiceClient: PlanetService {
     
     private var networking: Networking
     private var environment: Environment
     
-    init(environment: Environment, networking: Networking) {
+    required init(environment: Environment, networking: Networking) {
         self.networking = networking
         self.environment = environment
     }
     
-    func fetchPlanets(path: String) async -> [Planet] {
+    func fetchPlanets() async -> [Planet] {
         let adapter = PlanetListRequestAdapter(path: "/planets", method: .get, environment: environment)
         do {
-            guard let data = await networking.perform(pathAdapter: adapter) else { return [] }
+            guard let data = await networking.fetch(adapter) else { return [] }
             let planets = try JSONDecoder().decode(PlanetListResponseModel.self, from: data)
             return planets.results
         } catch {

@@ -60,6 +60,15 @@ extension SceneDelegate {
     }
     
     private func createRootNavigationController() -> UINavigationController {
-        UINavigationController(rootViewController: HomeViewController())
+        let homeViewController = createHomeViewController()
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        return navigationController
+    }
+    
+    private func createHomeViewController() -> HomeViewController {
+        let environment = DefaultEnvironment()
+        let netwoking = Networking(session: .shared)
+        let planetService: PlanetService = PlanetServiceClient(environment: environment, networking: netwoking)
+        return HomeViewController(networkClient: planetService)
     }
 }

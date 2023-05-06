@@ -31,6 +31,10 @@
 		7BB118822A067D70007E1A38 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118812A067D70007E1A38 /* MockURLSessionProtocol.swift */; };
 		7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118832A067EDD007E1A38 /* MockEnvironment.swift */; };
 		7BB118862A067EFE007E1A38 /* MockAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118852A067EFE007E1A38 /* MockAdapter.swift */; };
+		7BB118882A06B800007E1A38 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118872A06B800007E1A38 /* BaseView.swift */; };
+		7BB1188B2A06B89D007E1A38 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1188A2A06B89D007E1A38 /* LoadingView.swift */; };
+		7BB1188E2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1188D2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift */; };
+		7BB118902A06CF91007E1A38 /* PlanetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1188F2A06CF91007E1A38 /* PlanetListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +83,10 @@
 		7BB118812A067D70007E1A38 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
 		7BB118832A067EDD007E1A38 /* MockEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEnvironment.swift; sourceTree = "<group>"; };
 		7BB118852A067EFE007E1A38 /* MockAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdapter.swift; sourceTree = "<group>"; };
+		7BB118872A06B800007E1A38 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		7BB1188A2A06B89D007E1A38 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		7BB1188D2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
+		7BB1188F2A06CF91007E1A38 /* PlanetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +237,8 @@
 		7B68467B2A054CAF00CC5DD0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7BB1188C2A06BA45007E1A38 /* Extensions */,
+				7BB118892A06B873007E1A38 /* Components */,
 				7B6846832A05584700CC5DD0 /* Networking */,
 				7B68467E2A054ED100CC5DD0 /* Models */,
 				7B6846792A054B8F00CC5DD0 /* Views */,
@@ -249,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				7B68467C2A054D9000CC5DD0 /* HomeView.swift */,
+				7BB1188F2A06CF91007E1A38 /* PlanetListCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -282,6 +293,23 @@
 				7BB118852A067EFE007E1A38 /* MockAdapter.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		7BB118892A06B873007E1A38 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7BB118872A06B800007E1A38 /* BaseView.swift */,
+				7BB1188A2A06B89D007E1A38 /* LoadingView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7BB1188C2A06BA45007E1A38 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7BB1188D2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,8 +445,10 @@
 				7B6400A82A0648C500A66595 /* PathRequestAdapter.swift in Sources */,
 				7B6400AA2A06495400A66595 /* UrlRequestAdapter.swift in Sources */,
 				7B6400A62A06481D00A66595 /* BaseRequestAdapter.swift in Sources */,
+				7BB118902A06CF91007E1A38 /* PlanetListCell.swift in Sources */,
 				7B68464D2A05418200CC5DD0 /* HomeViewController.swift in Sources */,
 				7B68468B2A05748200CC5DD0 /* Environment.swift in Sources */,
+				7BB1188B2A06B89D007E1A38 /* LoadingView.swift in Sources */,
 				7B6400A02A0581AC00A66595 /* PlanetListResponseModel.swift in Sources */,
 				7B68467D2A054D9000CC5DD0 /* HomeView.swift in Sources */,
 				7B6846492A05418200CC5DD0 /* AppDelegate.swift in Sources */,
@@ -426,7 +456,9 @@
 				7B64009E2A057EA900A66595 /* PlanetListRequestModel.swift in Sources */,
 				7B6846822A0553C700CC5DD0 /* Planet.swift in Sources */,
 				7B6846852A05587000CC5DD0 /* PlanetService.swift in Sources */,
+				7BB118882A06B800007E1A38 /* BaseView.swift in Sources */,
 				7B6400A22A05851A00A66595 /* PlanetListRequest.swift in Sources */,
+				7BB1188E2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift in Sources */,
 				7B6846892A05741400CC5DD0 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

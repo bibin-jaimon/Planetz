@@ -33,6 +33,7 @@ class HomeViewController: UIViewController {
     }
     
     private func fetchPlanetData() {
+        self.homeView?.startLoader()
         Task { [weak self] in
             guard let self = self else { return }
             let planets = await networkClient.fetchPlanets()
@@ -43,6 +44,7 @@ class HomeViewController: UIViewController {
     private func updatePlanetData(data: [Planet]) {
         self.planets = data
         self.homeView?.update(planets: data)
+        self.homeView?.stopLoader()
     }
 
 }

@@ -8,13 +8,19 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+    var loadPlanets: (([Planet]) -> Void)?
 
+    override func loadView() {
+        self.view = HomeView()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .red
-
+        
+        //call planet api
+    
     }
-
 
 }
 

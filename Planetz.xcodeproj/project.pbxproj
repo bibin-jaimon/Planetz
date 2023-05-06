@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */; };
+		7B64009E2A057EA900A66595 /* PlanetListRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009D2A057EA900A66595 /* PlanetListRequestModel.swift */; };
+		7B6400A02A0581AC00A66595 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */; };
+		7B6400A22A05851A00A66595 /* PlanetListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A12A05851A00A66595 /* PlanetListRequest.swift */; };
+		7B6400A62A06481D00A66595 /* BaseRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A52A06481D00A66595 /* BaseRequestAdapter.swift */; };
+		7B6400A82A0648C500A66595 /* PathRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A72A0648C500A66595 /* PathRequestAdapter.swift */; };
+		7B6400AA2A06495400A66595 /* UrlRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A92A06495400A66595 /* UrlRequestAdapter.swift */; };
 		7B6846492A05418200CC5DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846482A05418200CC5DD0 /* AppDelegate.swift */; };
 		7B68464B2A05418200CC5DD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68464A2A05418200CC5DD0 /* SceneDelegate.swift */; };
 		7B68464D2A05418200CC5DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68464C2A05418200CC5DD0 /* HomeViewController.swift */; };
@@ -15,6 +22,11 @@
 		7B6846602A05418400CC5DD0 /* PlanetzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68465F2A05418400CC5DD0 /* PlanetzTests.swift */; };
 		7B68466A2A05418400CC5DD0 /* PlanetzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846692A05418400CC5DD0 /* PlanetzUITests.swift */; };
 		7B68466C2A05418400CC5DD0 /* PlanetzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68466B2A05418400CC5DD0 /* PlanetzUITestsLaunchTests.swift */; };
+		7B68467D2A054D9000CC5DD0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68467C2A054D9000CC5DD0 /* HomeView.swift */; };
+		7B6846822A0553C700CC5DD0 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846812A0553C700CC5DD0 /* Planet.swift */; };
+		7B6846852A05587000CC5DD0 /* PlanetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846842A05587000CC5DD0 /* PlanetService.swift */; };
+		7B6846892A05741400CC5DD0 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846882A05741400CC5DD0 /* Networking.swift */; };
+		7B68468B2A05748200CC5DD0 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68468A2A05748200CC5DD0 /* Environment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +47,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetServiceTests.swift; sourceTree = "<group>"; };
+		7B64009D2A057EA900A66595 /* PlanetListRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListRequestModel.swift; sourceTree = "<group>"; };
+		7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
+		7B6400A12A05851A00A66595 /* PlanetListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListRequest.swift; sourceTree = "<group>"; };
+		7B6400A52A06481D00A66595 /* BaseRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapter.swift; sourceTree = "<group>"; };
+		7B6400A72A0648C500A66595 /* PathRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathRequestAdapter.swift; sourceTree = "<group>"; };
+		7B6400A92A06495400A66595 /* UrlRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestAdapter.swift; sourceTree = "<group>"; };
 		7B6846452A05418200CC5DD0 /* Planetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6846482A05418200CC5DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B68464A2A05418200CC5DD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +66,11 @@
 		7B6846652A05418400CC5DD0 /* PlanetzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6846692A05418400CC5DD0 /* PlanetzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetzUITests.swift; sourceTree = "<group>"; };
 		7B68466B2A05418400CC5DD0 /* PlanetzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetzUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7B68467C2A054D9000CC5DD0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		7B6846812A0553C700CC5DD0 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		7B6846842A05587000CC5DD0 /* PlanetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetService.swift; sourceTree = "<group>"; };
+		7B6846882A05741400CC5DD0 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		7B68468A2A05748200CC5DD0 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +98,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7B6400982A057D4100A66595 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7B6400992A057D4900A66595 /* Networking */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7B6400992A057D4900A66595 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7B64009C2A057E7200A66595 /* PlanetService */ = {
+			isa = PBXGroup;
+			children = (
+				7B6400A32A05884800A66595 /* PlanetList */,
+				7B6846842A05587000CC5DD0 /* PlanetService.swift */,
+			);
+			path = PlanetService;
+			sourceTree = "<group>";
+		};
+		7B6400A32A05884800A66595 /* PlanetList */ = {
+			isa = PBXGroup;
+			children = (
+				7B64009D2A057EA900A66595 /* PlanetListRequestModel.swift */,
+				7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */,
+				7B6400A12A05851A00A66595 /* PlanetListRequest.swift */,
+			);
+			path = PlanetList;
+			sourceTree = "<group>";
+		};
+		7B6400A42A06477600A66595 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				7B6400A52A06481D00A66595 /* BaseRequestAdapter.swift */,
+				7B6400A72A0648C500A66595 /* PathRequestAdapter.swift */,
+				7B6400A92A06495400A66595 /* UrlRequestAdapter.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
 		7B68463C2A05418200CC5DD0 = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +166,9 @@
 		7B6846472A05418200CC5DD0 /* Planetz */ = {
 			isa = PBXGroup;
 			children = (
-				7B6846482A05418200CC5DD0 /* AppDelegate.swift */,
-				7B68464A2A05418200CC5DD0 /* SceneDelegate.swift */,
-				7B68464C2A05418200CC5DD0 /* HomeViewController.swift */,
-				7B6846512A05418300CC5DD0 /* Assets.xcassets */,
-				7B6846532A05418300CC5DD0 /* LaunchScreen.storyboard */,
-				7B6846562A05418300CC5DD0 /* Info.plist */,
+				7B68467A2A054BA000CC5DD0 /* AppAssets */,
+				7B6846802A05519800CC5DD0 /* Main */,
+				7B68467B2A054CAF00CC5DD0 /* Source */,
 			);
 			path = Planetz;
 			sourceTree = "<group>";
@@ -110,6 +176,7 @@
 		7B68465E2A05418400CC5DD0 /* PlanetzTests */ = {
 			isa = PBXGroup;
 			children = (
+				7B6400982A057D4100A66595 /* Source */,
 				7B68465F2A05418400CC5DD0 /* PlanetzTests.swift */,
 			);
 			path = PlanetzTests;
@@ -122,6 +189,79 @@
 				7B68466B2A05418400CC5DD0 /* PlanetzUITestsLaunchTests.swift */,
 			);
 			path = PlanetzUITests;
+			sourceTree = "<group>";
+		};
+		7B6846782A054B7400CC5DD0 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7B68464C2A05418200CC5DD0 /* HomeViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		7B6846792A054B8F00CC5DD0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7B68467F2A054F5A00CC5DD0 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7B68467A2A054BA000CC5DD0 /* AppAssets */ = {
+			isa = PBXGroup;
+			children = (
+				7B6846532A05418300CC5DD0 /* LaunchScreen.storyboard */,
+				7B6846512A05418300CC5DD0 /* Assets.xcassets */,
+			);
+			path = AppAssets;
+			sourceTree = "<group>";
+		};
+		7B68467B2A054CAF00CC5DD0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7B6846832A05584700CC5DD0 /* Networking */,
+				7B68467E2A054ED100CC5DD0 /* Models */,
+				7B6846792A054B8F00CC5DD0 /* Views */,
+				7B6846782A054B7400CC5DD0 /* Controllers */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		7B68467E2A054ED100CC5DD0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7B6846812A0553C700CC5DD0 /* Planet.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7B68467F2A054F5A00CC5DD0 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7B68467C2A054D9000CC5DD0 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7B6846802A05519800CC5DD0 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				7B6846562A05418300CC5DD0 /* Info.plist */,
+				7B6846482A05418200CC5DD0 /* AppDelegate.swift */,
+				7B68464A2A05418200CC5DD0 /* SceneDelegate.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		7B6846832A05584700CC5DD0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7B6400A42A06477600A66595 /* Adapters */,
+				7B64009C2A057E7200A66595 /* PlanetService */,
+				7B6846882A05741400CC5DD0 /* Networking.swift */,
+				7B68468A2A05748200CC5DD0 /* Environment.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,9 +394,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B6400A82A0648C500A66595 /* PathRequestAdapter.swift in Sources */,
+				7B6400AA2A06495400A66595 /* UrlRequestAdapter.swift in Sources */,
+				7B6400A62A06481D00A66595 /* BaseRequestAdapter.swift in Sources */,
 				7B68464D2A05418200CC5DD0 /* HomeViewController.swift in Sources */,
+				7B68468B2A05748200CC5DD0 /* Environment.swift in Sources */,
+				7B6400A02A0581AC00A66595 /* PlanetListResponseModel.swift in Sources */,
+				7B68467D2A054D9000CC5DD0 /* HomeView.swift in Sources */,
 				7B6846492A05418200CC5DD0 /* AppDelegate.swift in Sources */,
 				7B68464B2A05418200CC5DD0 /* SceneDelegate.swift in Sources */,
+				7B64009E2A057EA900A66595 /* PlanetListRequestModel.swift in Sources */,
+				7B6846822A0553C700CC5DD0 /* Planet.swift in Sources */,
+				7B6846852A05587000CC5DD0 /* PlanetService.swift in Sources */,
+				7B6400A22A05851A00A66595 /* PlanetListRequest.swift in Sources */,
+				7B6846892A05741400CC5DD0 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +416,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B6846602A05418400CC5DD0 /* PlanetzTests.swift in Sources */,
+				7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +578,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Planetz/Info.plist;
+				INFOPLIST_FILE = Planetz/Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -452,7 +604,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Planetz/Info.plist;
+				INFOPLIST_FILE = Planetz/Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

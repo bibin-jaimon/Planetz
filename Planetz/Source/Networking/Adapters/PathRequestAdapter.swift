@@ -7,6 +7,8 @@
 
 import Foundation
 
+/// To creata a URLRequest for a path like /planet
+/// Required environment object for base url
 protocol PathRequestAdapter: BaseRequestAdapter {
     var path: String { get }
     var environment: Environment { get }

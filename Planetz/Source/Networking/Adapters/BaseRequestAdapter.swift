@@ -14,7 +14,7 @@ enum HTTPMethod {
     case get
 }
 
-/// The protocol to be used for URLRequest
+/// The protocol to be used for creating URLRequest
 protocol BaseRequestAdapter {
     /// The HTTPMethod for the request
     var method: HTTPMethod { get }

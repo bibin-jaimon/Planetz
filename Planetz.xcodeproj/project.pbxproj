@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7B332C192A081FE000F5E32F /* PathRequestAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B332C182A081FE000F5E32F /* PathRequestAdapterTests.swift */; };
+		7B332C1B2A0823C300F5E32F /* UrlRequestAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B332C1A2A0823C300F5E32F /* UrlRequestAdapterTests.swift */; };
 		7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */; };
 		7B6400A02A0581AC00A66595 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */; };
 		7B6400A22A05851A00A66595 /* PlanetListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A12A05851A00A66595 /* PlanetListRequest.swift */; };
@@ -18,7 +20,6 @@
 		7B68464D2A05418200CC5DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68464C2A05418200CC5DD0 /* HomeViewController.swift */; };
 		7B6846522A05418300CC5DD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B6846512A05418300CC5DD0 /* Assets.xcassets */; };
 		7B6846552A05418300CC5DD0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7B6846532A05418300CC5DD0 /* LaunchScreen.storyboard */; };
-		7B6846602A05418400CC5DD0 /* PlanetzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68465F2A05418400CC5DD0 /* PlanetzTests.swift */; };
 		7B68466A2A05418400CC5DD0 /* PlanetzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846692A05418400CC5DD0 /* PlanetzUITests.swift */; };
 		7B68466C2A05418400CC5DD0 /* PlanetzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68466B2A05418400CC5DD0 /* PlanetzUITestsLaunchTests.swift */; };
 		7B68467D2A054D9000CC5DD0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68467C2A054D9000CC5DD0 /* HomeView.swift */; };
@@ -59,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7B332C182A081FE000F5E32F /* PathRequestAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathRequestAdapterTests.swift; sourceTree = "<group>"; };
+		7B332C1A2A0823C300F5E32F /* UrlRequestAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestAdapterTests.swift; sourceTree = "<group>"; };
 		7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetServiceTests.swift; sourceTree = "<group>"; };
 		7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
 		7B6400A12A05851A00A66595 /* PlanetListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListRequest.swift; sourceTree = "<group>"; };
@@ -73,7 +76,6 @@
 		7B6846542A05418300CC5DD0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7B6846562A05418300CC5DD0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B68465B2A05418400CC5DD0 /* PlanetzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetzTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7B68465F2A05418400CC5DD0 /* PlanetzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetzTests.swift; sourceTree = "<group>"; };
 		7B6846652A05418400CC5DD0 /* PlanetzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanetzUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6846692A05418400CC5DD0 /* PlanetzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetzUITests.swift; sourceTree = "<group>"; };
 		7B68466B2A05418400CC5DD0 /* PlanetzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetzUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -202,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				7B6400982A057D4100A66595 /* Source */,
-				7B68465F2A05418400CC5DD0 /* PlanetzTests.swift */,
 			);
 			path = PlanetzTests;
 			sourceTree = "<group>";
@@ -344,6 +345,8 @@
 			isa = PBXGroup;
 			children = (
 				7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */,
+				7B332C182A081FE000F5E32F /* PathRequestAdapterTests.swift */,
+				7B332C1A2A0823C300F5E32F /* UrlRequestAdapterTests.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -505,14 +508,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6846602A05418400CC5DD0 /* PlanetzTests.swift in Sources */,
 				7BB118862A067EFE007E1A38 /* MockAdapter.swift in Sources */,
 				7BB1187F2A067A56007E1A38 /* NetworkingTests.swift in Sources */,
+				7B332C192A081FE000F5E32F /* PathRequestAdapterTests.swift in Sources */,
 				7BB118822A067D70007E1A38 /* MockURLSessionProtocol.swift in Sources */,
 				7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */,
 				7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */,
 				7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */,
 				7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */,
+				7B332C1B2A0823C300F5E32F /* UrlRequestAdapterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

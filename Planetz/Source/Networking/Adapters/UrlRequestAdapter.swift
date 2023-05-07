@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// To create a URLRequest adapter with full URL
 protocol UrlRequestAdapter: BaseRequestAdapter {
+    
+    /// The full URL used to create a URLRequest
     var urlString: String { get }
 }
 

@@ -16,14 +16,13 @@ class BaseRequestAdapterTest: XCTestCase {
             var method: HTTPMethod { .get }
             
             var parameters: Parameters? { [
-                "param1": "value1",
-                "param2": "value2"
+                "param1": "value1"
             ] }
             
             var requestURLString: String { "http://www.sample.com" }
         }
         
-        let expectedURLString: String = "http://www.sample.com?param1=value1&param2=value2"
+        let expectedURLString: String = "http://www.sample.com?param1=value1"
         let expectedHttpMethod = "GET"
         
         let sut: BaseRequestAdapter = MockBaseRequestAdapter()

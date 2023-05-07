@@ -25,7 +25,6 @@ class Networking {
         
         do {
             let (data, _) = try await session.data(for: request)
-            
             return data
         } catch(let error) {
             print(error.localizedDescription)

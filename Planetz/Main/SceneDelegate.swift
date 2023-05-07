@@ -68,7 +68,8 @@ extension SceneDelegate {
     private func createHomeViewController() -> HomeViewController {
         let environment = DefaultEnvironment()
         let netwoking = Networking(session: .shared)
+        let dataStore: DataStoreProtocol = DataStore()
         let planetService: PlanetService = PlanetServiceClient(environment: environment, networking: netwoking)
-        return HomeViewController(networkClient: planetService)
+        return HomeViewController(networkClient: planetService, dataStore: dataStore)
     }
 }

@@ -10,11 +10,17 @@ import UIKit
 class HomeViewController: UIViewController {
     
     var networkClient: PlanetService
-    var planets: [Planet] = []
+    var dataStore: DataStoreProtocol
     var homeView: HomeView?
+    var planets: [Planet] = [] {
+        didSet {
+            self.updateHomeView(data: planets)
+        }
+    }
     
-    init(networkClient: PlanetService) {
+    init(networkClient: PlanetService, dataStore: DataStoreProtocol) {
         self.networkClient = networkClient
+        self.dataStore = dataStore
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -29,7 +35,13 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPlanetData()
+        let isAvailableNetwork = false
+        if isAvailableNetwork {
+            fetchPlanetData()
+        } else {
+            self.planets = getSavedPlanets()
+        }
+        
     }
     
     private func fetchPlanetData() {
@@ -37,14 +49,26 @@ class HomeViewController: UIViewController {
         Task { [weak self] in
             guard let self = self else { return }
             let planets = await networkClient.fetchPlanets()
-            self.updatePlanetData(data: planets)
+            self.planets = planets
+            self.save(planets)
         }
     }
     
-    private func updatePlanetData(data: [Planet]) {
-        self.planets = data
+    private func updateHomeView(data: [Planet]) {
         self.homeView?.update(planets: data)
         self.homeView?.stopLoader()
+    }
+    
+    private func save(_ planets: [Planet]) {
+        guard let data = try? JSONEncoder().encode(planets) else { return }
+        dataStore.save(for: .planets, value: data)
+    }
+    
+    private func getSavedPlanets() -> [Planet] {
+        guard let data = dataStore.get(key: .planets) else { return [] }
+        guard let planets = try? JSONDecoder().decode([Planet].self, from: data) else { return [] }
+        return planets
+        
     }
 
 }

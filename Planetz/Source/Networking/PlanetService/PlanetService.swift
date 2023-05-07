@@ -18,7 +18,7 @@ class PlanetServiceClient: PlanetService {
     private var dataFormatter: DataFormatter
     
     required init(environment: Environment,
-                  networking: Networking,
+                  networking: NetworkingProtocol,
                   dataFormatter: DataFormatter = JSONFormatter()) {
         self.networking = networking
         self.environment = environment

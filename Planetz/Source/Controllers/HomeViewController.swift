@@ -66,7 +66,6 @@ class HomeViewController: UIViewController {
     }
     
     private func save(_ planets: [Planet]) {
-        if planets.isEmpty { return }
         guard let data = dataFormatter.encodeToData(planets) else { return }
         dataStore.save(for: .planets, value: data)
     }

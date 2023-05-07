@@ -86,7 +86,6 @@
 		7BB1188A2A06B89D007E1A38 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		7BB1188F2A06CF91007E1A38 /* PlanetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCell.swift; sourceTree = "<group>"; };
 		7BB118932A06EA3B007E1A38 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
-		7BB118982A074EF9007E1A38 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7BB1189B2A076A63007E1A38 /* DataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -136,19 +135,18 @@
 		7B64009C2A057E7200A66595 /* PlanetService */ = {
 			isa = PBXGroup;
 			children = (
-				7B6400A32A05884800A66595 /* PlanetList */,
+				7B6400A32A05884800A66595 /* PlanetListRequestAdapter */,
 				7B6846842A05587000CC5DD0 /* PlanetService.swift */,
 			);
 			path = PlanetService;
 			sourceTree = "<group>";
 		};
-		7B6400A32A05884800A66595 /* PlanetList */ = {
+		7B6400A32A05884800A66595 /* PlanetListRequestAdapter */ = {
 			isa = PBXGroup;
 			children = (
-				7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */,
 				7B6400A12A05851A00A66595 /* PlanetListRequest.swift */,
 			);
-			path = PlanetList;
+			path = PlanetListRequestAdapter;
 			sourceTree = "<group>";
 		};
 		7B6400A42A06477600A66595 /* Adapters */ = {
@@ -168,7 +166,6 @@
 				7B68465E2A05418400CC5DD0 /* PlanetzTests */,
 				7B6846682A05418400CC5DD0 /* PlanetzUITests */,
 				7B6846462A05418200CC5DD0 /* Products */,
-				7BB118972A074EF9007E1A38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -239,7 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				7BB1189A2A076800007E1A38 /* DataStore */,
-				7BB1188C2A06BA45007E1A38 /* Utilties */,
+				7BB1188C2A06BA45007E1A38 /* Utils */,
 				7BB118892A06B873007E1A38 /* Components */,
 				7B6846832A05584700CC5DD0 /* Networking */,
 				7B68467E2A054ED100CC5DD0 /* Models */,
@@ -252,6 +249,7 @@
 		7B68467E2A054ED100CC5DD0 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */,
 				7B6846812A0553C700CC5DD0 /* Planet.swift */,
 			);
 			path = Models;
@@ -306,20 +304,12 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		7BB1188C2A06BA45007E1A38 /* Utilties */ = {
+		7BB1188C2A06BA45007E1A38 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				7BB1189B2A076A63007E1A38 /* DataFormatter.swift */,
 			);
-			path = Utilties;
-			sourceTree = "<group>";
-		};
-		7BB118972A074EF9007E1A38 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				7BB118982A074EF9007E1A38 /* SystemConfiguration.framework */,
-			);
-			name = Frameworks;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7BB1189A2A076800007E1A38 /* DataStore */ = {

@@ -8,33 +8,28 @@
 import Foundation
 
 protocol PlanetService {
-    init(environment: Environment, networking: Networking, jsonDecoder: JSONDecoder)
     func fetchPlanets() async -> [Planet]
 }
 
 class PlanetServiceClient: PlanetService {
     
-    private var networking: Networking
+    private var networking: NetworkingProtocol
     private var environment: Environment
-    private var jsonDecoder: JSONDecoder
+    private var dataFormatter: DataFormatter
     
     required init(environment: Environment,
                   networking: Networking,
-                  jsonDecoder: JSONDecoder = JSONDecoder()) {
+                  dataFormatter: DataFormatter = JSONFormatter()) {
         self.networking = networking
         self.environment = environment
-        self.jsonDecoder = jsonDecoder
+        self.dataFormatter = dataFormatter
     }
     
     func fetchPlanets() async -> [Planet] {
         let adapter = PlanetListRequestAdapter(path: "/planets", method: .get, environment: environment)
-        do {
-            guard let data = await networking.fetch(adapter) else { return [] }
-            let planets = try jsonDecoder.decode(PlanetListResponseModel.self, from: data)
-            return planets.results
-        } catch {
-            // Handle errors
-        }
-        return []
+        let (res, _) = await networking.fetch(adapter)
+        guard let data = res else { return [] }
+        guard let formatterData = dataFormatter.decodeToJSON(to: PlanetListResponseModel.self, for: data) else { return [] }
+        return formatterData.results
     }
 }

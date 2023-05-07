@@ -70,6 +70,7 @@ extension SceneDelegate {
         let netwoking = Networking(session: .shared)
         let dataStore: DataStoreProtocol = DataStore()
         let planetService: PlanetService = PlanetServiceClient(environment: environment, networking: netwoking)
-        return HomeViewController(networkClient: planetService, dataStore: dataStore)
+        let dataFormatter: DataFormatter = JSONFormatter()
+        return HomeViewController(networkClient: planetService, dataStore: dataStore, dataFormatter: dataFormatter)
     }
 }

@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     private var networkClient: PlanetService
     private var dataStore: DataStoreProtocol
     private var homeView: HomeView?
+    private var dataFormatter: DataFormatter
     
     var planets: [Planet] = [] {
         didSet {
@@ -19,9 +20,10 @@ class HomeViewController: UIViewController {
         }
     }
     
-    init(networkClient: PlanetService, dataStore: DataStoreProtocol) {
+    init(networkClient: PlanetService, dataStore: DataStoreProtocol, dataFormatter: DataFormatter) {
         self.networkClient = networkClient
         self.dataStore = dataStore
+        self.dataFormatter = dataFormatter
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -45,9 +47,17 @@ class HomeViewController: UIViewController {
         Task { [weak self] in
             guard let self = self else { return }
             let planets = await networkClient.fetchPlanets()
-            self.planets = planets
-            self.save(planets)
+            self.handle(planets)
         }
+    }
+    
+    private func handle(_ planets: [Planet]) {
+        if planets.isEmpty {
+            self.planets = getSavedPlanets()
+            return
+        }
+        self.planets = planets
+        self.save(planets)
     }
     
     private func updateHomeView(data: [Planet]) {
@@ -56,13 +66,14 @@ class HomeViewController: UIViewController {
     }
     
     private func save(_ planets: [Planet]) {
-        guard let data = try? JSONEncoder().encode(planets) else { return }
+        if planets.isEmpty { return }
+        guard let data = dataFormatter.encodeToData(planets) else { return }
         dataStore.save(for: .planets, value: data)
     }
     
     private func getSavedPlanets() -> [Planet] {
         guard let data = dataStore.get(key: .planets) else { return [] }
-        guard let planets = try? JSONDecoder().decode([Planet].self, from: data) else { return [] }
+        guard let planets = dataFormatter.decodeToJSON(to: [Planet].self, for: data) else { return [] }
         return planets
         
     }

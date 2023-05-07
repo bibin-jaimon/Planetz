@@ -9,14 +9,16 @@ import Foundation
 
 protocol DataFormatter {
     func decodeToJSON<T: Decodable>(to: T.Type, for data: Data) -> T?
-    func encodeToData<T: Decodable>(from: T) -> Data?
+    func encodeToData<T: Encodable>(_ data: T) -> Data?
 }
 
 class JSONFormatter: DataFormatter {
     private let jsonDecoder: JSONDecoder
+    private let jsonEncoder: JSONEncoder
     
-    init(jsonDecoder: JSONDecoder = JSONDecoder()) {
+    init(jsonDecoder: JSONDecoder = JSONDecoder(), jsonEncoder: JSONEncoder = JSONEncoder()) {
         self.jsonDecoder = jsonDecoder
+        self.jsonEncoder = jsonEncoder
     }
     
     func decodeToJSON<T: Decodable>(to type: T.Type, for data: Data) -> T? {
@@ -29,7 +31,13 @@ class JSONFormatter: DataFormatter {
         }
     }
     
-    func encodeToData<T: Decodable>(from: T) -> Data? {
-        return nil
+    func encodeToData<T: Encodable>(_ data: T) -> Data? {
+        do {
+            let result = try jsonEncoder.encode(data)
+            return result
+        } catch (let error) {
+            debugPrint("DataFormatter error: \(error.localizedDescription)")
+            return nil
+        }
     }
 }

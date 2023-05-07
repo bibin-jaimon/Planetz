@@ -15,12 +15,8 @@ struct MockAdapter: PathRequestAdapter {
     var parameters: Parameters? { nil }
 }
 
-struct InvalidURLMockAdapter: PathRequestAdapter {
-    var path: String { "/planet" }
-    var environment: Environment { MockEnvironment() }
+struct MockEmptyURLRequestAdapter: UrlRequestAdapter {
+    var urlString: String { "" }
     var method: HTTPMethod { .get }
     var parameters: Parameters? { nil }
-    func build() -> URLRequest? {
-        return nil
-    }
 }

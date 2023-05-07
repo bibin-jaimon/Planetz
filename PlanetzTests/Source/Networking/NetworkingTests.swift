@@ -31,8 +31,8 @@ final class NetworkingTests: XCTestCase {
 //
 //    }
     
-    func testInvalidRequest() async {
-        let mockAdapter = InvalidURLMockAdapter()
+    func testNetworking_whenEmptyURLProvided_returnsError() async {
+        let mockAdapter = MockEmptyURLRequestAdapter()
         let sut = Networking(session: .shared)
         
         let (data, error) = await sut.fetch(mockAdapter)
@@ -41,8 +41,4 @@ final class NetworkingTests: XCTestCase {
         XCTAssertEqual(error, .invalidRequest)
     }
 
-}
-
-
-extension NetworkingTests {
 }

@@ -10,11 +10,11 @@ import XCTest
 
 final class PlanetServiceTests: XCTestCase {
 
-    func testFetchPlanets_Failed_ReturnsEmptyArray() async throws {
+    func testFetchPlanets_failed_returnsEmptyArray() async throws {
         
         class MockNetworking: NetworkingProtocol {
             func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
-                return (nil, .unknown)
+                return (nil, .invalidRequest)
             }
         }
         
@@ -30,7 +30,7 @@ final class PlanetServiceTests: XCTestCase {
         XCTAssertEqual(data.count, 0)
     }
     
-    func testFetchPlanets_Success_ReturnsPlanetData() async {
+    func testFetchPlanets_success_returnsPlanetData() async {
         class MockNetworking: NetworkingProtocol {
             func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
                 return (MockPlanetResponse.sampleData.data(using: .utf8), nil)

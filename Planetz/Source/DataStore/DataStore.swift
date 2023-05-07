@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 protocol DataStoreProtocol {
     func save(for key: DSKeys, value: Data)
     func get(key: DSKeys) -> Data?
@@ -16,7 +15,6 @@ protocol DataStoreProtocol {
 enum DSKeys: String {
     case planets = "planets"
 }
-
 
 class DataStore: DataStoreProtocol {
     func save(for key: DSKeys, value: Data) {

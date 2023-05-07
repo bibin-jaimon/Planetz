@@ -45,6 +45,7 @@ extension BaseRequestAdapter {
     
     /// To build GET http request
     private func buildGetRequest() -> URLRequest? {
+        guard !requestURLString.isEmpty else { return nil }
         guard let components: URLComponents = buildGetUrlComponent(urlString: requestURLString) else { return nil }
         guard let url = components.url else { return nil }
         var request: URLRequest = URLRequest(url: url)

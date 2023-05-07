@@ -9,10 +9,10 @@ import Foundation
 import UIKit
 
 /// These are the errors might return from Networking Protocol
-enum NetworkError: Error {
+enum NetworkError: Error, Equatable {
     case noInternet
     case invalidRequest
-    case unknown
+    case failedRequest(description: String)
 }
 
 protocol NetworkingProtocol {
@@ -31,8 +31,7 @@ final class Networking: NetworkingProtocol {
     }
     
     /// Request data from an endpoint
-    ///  - Parameters
-    ///  - adapter: instance of BaseRequestAdapter which used to build the URLRequest
+    ///  - Parameter adapter: instance of BaseRequestAdapter which used to build the URLRequest
     ///  - Returns: Tuple with data and NetworkError. Eg: (Data?, NetworkError?)
     func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
         guard let request: URLRequest = adapter.build() else { return (nil, .invalidRequest) }
@@ -48,7 +47,7 @@ final class Networking: NetworkingProtocol {
                 return (nil, .noInternet)
             }
             
-            return (nil, .unknown)
+            return (nil, .failedRequest(description: error.localizedDescription))
         }
     }
 }

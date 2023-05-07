@@ -23,6 +23,8 @@ class HomeView: BaseView {
         return view
     }()
     
+    let emptyInfoView = InfoView()
+    
     init() {
         super.init(frame: .zero)
     }
@@ -56,6 +58,9 @@ class HomeView: BaseView {
     private func setupPlanetTableView() {
         tableView.register(PlanetListCell.self, forCellReuseIdentifier: PlanetListCell.identifier)
         tableView.dataSource = self
+        emptyInfoView.set(message: Strings.noPlanetDataAvailable)
+        tableView.backgroundView = emptyInfoView
+        
     }
     
     func update(planets: [Planet]) {

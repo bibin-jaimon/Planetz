@@ -25,6 +25,7 @@ class PlanetServiceClient: PlanetService {
         self.dataFormatter = dataFormatter
     }
     
+    
     func fetchPlanets() async -> [Planet] {
         let adapter = PlanetListRequestAdapter(path: "/planets", method: .get, environment: environment)
         let (res, _) = await networking.fetch(adapter)

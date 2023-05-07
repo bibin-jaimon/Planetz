@@ -8,27 +8,38 @@
 import Foundation
 import UIKit
 
-struct NetworkResponse {
-    let data: Data?
-    let error: String?
+enum NetworkError: Error {
+    case noInternet
+    case invalidRequest
+    case unknown
 }
 
-class Networking {
+protocol NetworkingProtocol {
+    func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?)
+}
+
+final class Networking: NetworkingProtocol {
     private var session: URLSession
     
-    init(session: URLSession) {
+    init(session: URLSession = .shared) {
         self.session = session
     }
     
-    func fetch(_ adapter: BaseRequestAdapter) async -> Data? {
-        guard let request: URLRequest = adapter.build() else { return nil }
+    func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
+        guard let request: URLRequest = adapter.build() else { return (nil, .invalidRequest) }
         
         do {
             let (data, _) = try await session.data(for: request)
-            return data
+            return (data, nil)
         } catch(let error) {
-            print(error.localizedDescription)
+            let kNSError = error as NSError
+            
+            // Handle No Internet issue
+            if kNSError.code == NSURLErrorNotConnectedToInternet {
+                return (nil, .noInternet)
+            }
+            
+            return (nil, .unknown)
         }
-        return nil
     }
 }

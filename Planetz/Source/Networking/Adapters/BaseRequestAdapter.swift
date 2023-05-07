@@ -14,15 +14,24 @@ enum HTTPMethod {
     case get
 }
 
+/// The protocol to be used for URLRequest
 protocol BaseRequestAdapter {
+    /// The HTTPMethod for the request
     var method: HTTPMethod { get }
+    
+    /// The parameters for the request
     var parameters: Parameters? { get }
+    
+    /// The request URL
     var requestURLString: String { get }
+    
+    /// The method to generate URLRequest
     func build() -> URLRequest?
 }
 
 extension BaseRequestAdapter {
     
+    /// The method used to add query params to the http request
     private func buildGetUrlComponent(urlString: String) -> URLComponents? {
         var urlRequest = URLComponents(string: urlString)
         
@@ -34,6 +43,7 @@ extension BaseRequestAdapter {
         return urlRequest
     }
     
+    /// To build GET http request
     private func buildGetRequest() -> URLRequest? {
         guard let components: URLComponents = buildGetUrlComponent(urlString: requestURLString) else { return nil }
         guard let url = components.url else { return nil }
@@ -42,6 +52,7 @@ extension BaseRequestAdapter {
         request.httpMethod = "GET"
         return request
     }
+
     
     func build() -> URLRequest? {
         switch method {

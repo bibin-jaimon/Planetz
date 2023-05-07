@@ -38,6 +38,7 @@
 		7BB118A12A0781B1007E1A38 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A02A0781B1007E1A38 /* InfoView.swift */; };
 		7BB118A32A07859D007E1A38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A22A07859D007E1A38 /* Strings.swift */; };
 		7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */; };
+		7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,7 @@
 		7BB118A02A0781B1007E1A38 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		7BB118A22A07859D007E1A38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetResponse.swift; sourceTree = "<group>"; };
+		7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapterTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		7B6400992A057D4900A66595 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				7BB118A72A0819F3007E1A38 /* Adapters */,
 				7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */,
 				7BB1187E2A067A56007E1A38 /* NetworkingTests.swift */,
 			);
@@ -337,6 +340,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		7BB118A72A0819F3007E1A38 /* Adapters */ = {
+			isa = PBXGroup;
+			children = (
+				7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */,
+			);
+			path = Adapters;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -498,6 +509,7 @@
 				7BB118862A067EFE007E1A38 /* MockAdapter.swift in Sources */,
 				7BB1187F2A067A56007E1A38 /* NetworkingTests.swift in Sources */,
 				7BB118822A067D70007E1A38 /* MockURLSessionProtocol.swift in Sources */,
+				7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */,
 				7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */,
 				7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */,
 				7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */,

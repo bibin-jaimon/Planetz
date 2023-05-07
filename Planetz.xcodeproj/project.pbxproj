@@ -32,9 +32,9 @@
 		7BB118862A067EFE007E1A38 /* MockAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118852A067EFE007E1A38 /* MockAdapter.swift */; };
 		7BB118882A06B800007E1A38 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118872A06B800007E1A38 /* BaseView.swift */; };
 		7BB1188B2A06B89D007E1A38 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1188A2A06B89D007E1A38 /* LoadingView.swift */; };
-		7BB1188E2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1188D2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift */; };
 		7BB118902A06CF91007E1A38 /* PlanetListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1188F2A06CF91007E1A38 /* PlanetListCell.swift */; };
 		7BB118942A06EA3B007E1A38 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118932A06EA3B007E1A38 /* DataStore.swift */; };
+		7BB1189C2A076A63007E1A38 /* DataFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1189B2A076A63007E1A38 /* DataFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,9 +84,10 @@
 		7BB118852A067EFE007E1A38 /* MockAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAdapter.swift; sourceTree = "<group>"; };
 		7BB118872A06B800007E1A38 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		7BB1188A2A06B89D007E1A38 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		7BB1188D2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Extension.swift"; sourceTree = "<group>"; };
 		7BB1188F2A06CF91007E1A38 /* PlanetListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCell.swift; sourceTree = "<group>"; };
 		7BB118932A06EA3B007E1A38 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		7BB118982A074EF9007E1A38 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		7BB1189B2A076A63007E1A38 /* DataFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +168,7 @@
 				7B68465E2A05418400CC5DD0 /* PlanetzTests */,
 				7B6846682A05418400CC5DD0 /* PlanetzUITests */,
 				7B6846462A05418200CC5DD0 /* Products */,
+				7BB118972A074EF9007E1A38 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -236,13 +238,13 @@
 		7B68467B2A054CAF00CC5DD0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7BB1188C2A06BA45007E1A38 /* Extensions */,
+				7BB1189A2A076800007E1A38 /* DataStore */,
+				7BB1188C2A06BA45007E1A38 /* Utilties */,
 				7BB118892A06B873007E1A38 /* Components */,
 				7B6846832A05584700CC5DD0 /* Networking */,
 				7B68467E2A054ED100CC5DD0 /* Models */,
 				7B6846792A054B8F00CC5DD0 /* Views */,
 				7B6846782A054B7400CC5DD0 /* Controllers */,
-				7BB118932A06EA3B007E1A38 /* DataStore.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -304,12 +306,28 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		7BB1188C2A06BA45007E1A38 /* Extensions */ = {
+		7BB1188C2A06BA45007E1A38 /* Utilties */ = {
 			isa = PBXGroup;
 			children = (
-				7BB1188D2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift */,
+				7BB1189B2A076A63007E1A38 /* DataFormatter.swift */,
 			);
-			path = Extensions;
+			path = Utilties;
+			sourceTree = "<group>";
+		};
+		7BB118972A074EF9007E1A38 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7BB118982A074EF9007E1A38 /* SystemConfiguration.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7BB1189A2A076800007E1A38 /* DataStore */ = {
+			isa = PBXGroup;
+			children = (
+				7BB118932A06EA3B007E1A38 /* DataStore.swift */,
+			);
+			path = DataStore;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -458,7 +476,7 @@
 				7B6846852A05587000CC5DD0 /* PlanetService.swift in Sources */,
 				7BB118882A06B800007E1A38 /* BaseView.swift in Sources */,
 				7B6400A22A05851A00A66595 /* PlanetListRequest.swift in Sources */,
-				7BB1188E2A06BA7A007E1A38 /* NSLayoutConstraint+Extension.swift in Sources */,
+				7BB1189C2A076A63007E1A38 /* DataFormatter.swift in Sources */,
 				7B6846892A05741400CC5DD0 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

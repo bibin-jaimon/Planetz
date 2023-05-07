@@ -9,9 +9,10 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    var networkClient: PlanetService
-    var dataStore: DataStoreProtocol
-    var homeView: HomeView?
+    private var networkClient: PlanetService
+    private var dataStore: DataStoreProtocol
+    private var homeView: HomeView?
+    
     var planets: [Planet] = [] {
         didSet {
             self.updateHomeView(data: planets)
@@ -35,12 +36,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let isAvailableNetwork = false
-        if isAvailableNetwork {
-            fetchPlanetData()
-        } else {
-            self.planets = getSavedPlanets()
-        }
+        fetchPlanetData()
         
     }
     

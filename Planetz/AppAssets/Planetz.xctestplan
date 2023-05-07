@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "3DFA125A-7B75-40BA-98F2-7CB8A00BA56D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Planetz.xcodeproj",
+      "identifier" : "7B6846442A05418200CC5DD0",
+      "name" : "Planetz"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Planetz.xcodeproj",
+        "identifier" : "7B68465A2A05418400CC5DD0",
+        "name" : "PlanetzTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Planetz.xcodeproj",
+        "identifier" : "7B6846642A05418400CC5DD0",
+        "name" : "PlanetzUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

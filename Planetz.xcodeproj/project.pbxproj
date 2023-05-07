@@ -97,6 +97,7 @@
 		7BB118A22A07859D007E1A38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetResponse.swift; sourceTree = "<group>"; };
 		7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapterTest.swift; sourceTree = "<group>"; };
+		7BBF85B42A08308B00D46853 /* Planetz.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Planetz.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +237,7 @@
 		7B68467A2A054BA000CC5DD0 /* AppAssets */ = {
 			isa = PBXGroup;
 			children = (
+				7BBF85B42A08308B00D46853 /* Planetz.xctestplan */,
 				7B6846532A05418300CC5DD0 /* LaunchScreen.storyboard */,
 				7B6846512A05418300CC5DD0 /* Assets.xcassets */,
 			);

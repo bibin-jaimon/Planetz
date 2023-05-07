@@ -9,22 +9,45 @@ import XCTest
 @testable import Planetz
 
 final class PlanetServiceTests: XCTestCase {
-    
-    //API success
-    //API failure
 
-    func testFetchPlanets_Success() async throws {
-        let environment = MockEnvironment()
+    func testFetchPlanets_Failed_ReturnsEmptyArray() async throws {
         
-        let networking = Networking(session: URLSession.shared)
+        class MockNetworking: NetworkingProtocol {
+            func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
+                return (nil, .unknown)
+            }
+        }
+        
+        let environment = MockEnvironment()
+        let networking: NetworkingProtocol = MockNetworking()
         
         let client = PlanetServiceClient(
             environment: environment,
             networking: networking
         )
         
-        let _ = await client.fetchPlanets()
+        let data = await client.fetchPlanets()
+        XCTAssertEqual(data.count, 0)
+    }
+    
+    func testFetchPlanets_Success_ReturnsPlanetData() async {
+        class MockNetworking: NetworkingProtocol {
+            func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
+                return (MockPlanetResponse.sampleData.data(using: .utf8), nil)
+            }
+        }
         
+        let environment = MockEnvironment()
+        let networking: NetworkingProtocol = MockNetworking()
+        
+        let client = PlanetServiceClient(
+            environment: environment,
+            networking: networking
+        )
+        
+        let data = await client.fetchPlanets()
+        
+        XCTAssertEqual(data.count, 1)
     }
 
 }

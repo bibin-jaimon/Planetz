@@ -13,18 +13,32 @@ final class NetworkingTests: XCTestCase {
     //Test fetch success
     //Test fetch failure
     
-    func testExample() async throws {
-        let mockConfig = URLSessionConfiguration.ephemeral
-        mockConfig.protocolClasses = [MockURLProtocol.self]
-//        MockURLProtocol.stubResponseData = "nil".data(using: .utf8)
-        
-        let mockSession = URLSession(configuration: mockConfig)
-        let mockAdapter = MockAdapter()
-        
-        let sut = Networking(session: mockSession)
-        
-        let _ = await sut.fetch(mockAdapter)
+//    func testExample() async throws {
+//        URLProtocol.registerClass(MockURLProtocol.self)
+//
+//        let mockConfig = URLSessionConfiguration.ephemeral
+//        MockURLProtocol.stubResponseData = Data()
+//        mockConfig.protocolClasses = [MockURLProtocol.self]
+//        let mockSession = URLSession(configuration: mockConfig)
+//
+//        let mockAdapter = MockAdapter()
+//
+//        let sut = Networking(session: mockSession)
+////        let (data, response) = try await URLSession.shared.data(for: mockAdapter.build()!)
+//        let (data, _) = await sut.fetch(mockAdapter)
+//        print(data)
+//
+//
+//    }
     
+    func testInvalidRequest() async {
+        let mockAdapter = InvalidURLMockAdapter()
+        let sut = Networking(session: .shared)
+        
+        let (data, error) = await sut.fetch(mockAdapter)
+        
+        XCTAssertNil(data)
+        XCTAssertEqual(error, .invalidRequest)
     }
 
 }

@@ -9,6 +9,7 @@ import Foundation
 
 typealias Parameters = [String: Any]
 
+/// HTTP request methods
 enum HTTPMethod {
     case get
 }
@@ -37,7 +38,7 @@ extension BaseRequestAdapter {
         guard let components: URLComponents = buildGetUrlComponent(urlString: requestURLString) else { return nil }
         guard let url = components.url else { return nil }
         var request: URLRequest = URLRequest(url: url)
-        request.setValue("Content-Type", forHTTPHeaderField: "application/json")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "GET"
         return request
     }

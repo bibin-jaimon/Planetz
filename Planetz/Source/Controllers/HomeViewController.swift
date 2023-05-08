@@ -14,7 +14,7 @@ class HomeViewController: UIViewController {
     private var homeView: HomeView?
     private var dataFormatter: DataFormatter
     
-    var planets: [Planet] = [] {
+    private var planets: [Planet] = [] {
         didSet {
             self.updateHomeView(data: planets)
         }
@@ -44,7 +44,7 @@ class HomeViewController: UIViewController {
         })
     }
     
-    func fetchPlanetData(_ completion: (() -> Void)? = nil) {
+    private func fetchPlanetData(_ completion: (() -> Void)? = nil) {
         Task { [weak self] in
             guard let strongSelf = self else { return }
             let planets = await strongSelf.planetServiceClinet.fetchPlanets()
@@ -81,3 +81,33 @@ class HomeViewController: UIViewController {
 
 }
 
+#if DEBUG
+
+// MARK: - Unit testing
+
+extension HomeViewController {
+    
+    var testSupport: TestSupport {
+        TestSupport(instance: self)
+    }
+    
+    struct TestSupport {
+        private let instance: HomeViewController
+        
+        fileprivate init(instance: HomeViewController) {
+            self.instance = instance
+        }
+        
+        var planets: [Planet] { instance.planets }
+        
+        func fetchPlanetData(_ completion: (() -> Void)? = nil) {
+            instance.fetchPlanetData(completion)
+        }
+        
+        func getHomeView() -> HomeView? {
+            instance.homeView
+        }
+
+    }
+}
+#endif

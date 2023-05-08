@@ -10,27 +10,19 @@ import XCTest
 
 class HomeViewControllerTests: XCTestCase {
     
-    func testHomeViewController_whenProvidedEmptyPlanet() {
-        //MockPlanetService
-        class MockPlanetServiceClinetClient: PlanetService {
-            func fetchPlanets() async -> [Planetz.Planet] {
-                return []
-            }
-        }
-        //Mock DataStore
-        class MockDataStore: DataStoreProtocol {
-            func save(for key: Planetz.DSKeys, value: Data) { }
-            func get(key: Planetz.DSKeys) -> Data? { return nil }
-        }
+    func testHomeViewController_whenProvidedEmptyPlanet_planetArrayShouldHaveCorrectCount() {
 
+        let mockDataStore = MockDataStore()
         let expt = expectation(description: "TestHomeViewController")
-        let sut = HomeViewController(planetServiceClinet: MockPlanetServiceClinetClient(),
-                                     dataStore: MockDataStore(),
+        let sut = HomeViewController(planetServiceClinet: EmptyPlanetServiceClinet(),
+                                     dataStore: mockDataStore,
                                      dataFormatter: JSONFormatter())
         
-        sut.fetchPlanetData {
-            let planetCount = sut.planets.count
+        sut.testSupport.fetchPlanetData {
+            let planetCount = sut.testSupport.planets.count
             XCTAssertEqual(planetCount, 0)
+            XCTAssertFalse(mockDataStore.isCalledSaveMethodWithPlanetKey)
+            XCTAssertTrue(mockDataStore.isCalledToReadPersistingData)
             expt.fulfill()
         }
 
@@ -38,31 +30,59 @@ class HomeViewControllerTests: XCTestCase {
         
     }
     
-    func testHomeViewController_whenProvidedPlanetData() {
-        //MockPlanetService
-        class MockPlanetServiceClinetClient: PlanetService {
-            func fetchPlanets() async -> [Planetz.Planet] {
-                return MockPlanetResponse.planets
-            }
-        }
-        
-        let sut = HomeViewController(planetServiceClinet: MockPlanetServiceClinetClient(),
-                                     dataStore: MockDataStore(),
+    func testHomeViewController_whenProvidedPlanetData_planetArrayShouldHaveCorrectCount() {
+        let mockDataStore = MockDataStore()
+        let sut = HomeViewController(planetServiceClinet: MockPlanetServiceClinet(),
+                                     dataStore: mockDataStore,
                                      dataFormatter: JSONFormatter())
         
         let expt = expectation(description: "TestHomeViewController")
-        sut.fetchPlanetData {
-            let planetCount = sut.planets.count
+        sut.testSupport.fetchPlanetData {
+            let planetCount = sut.testSupport.planets.count
             XCTAssertEqual(planetCount, 1)
+            XCTAssertTrue(mockDataStore.isCalledSaveMethodWithPlanetKey)
             expt.fulfill()
         }
         waitForExpectations(timeout: 10)
     }
+    
+    func testHomeViewController_whenCalledLoadView_viewShouldHaveValue() {
+        
+        let sut = HomeViewController(planetServiceClinet: MockPlanetServiceClinet(),
+                                     dataStore: MockDataStore(),
+                                     dataFormatter: JSONFormatter())
+        
+        sut.loadView()
+        XCTAssertNotNil(sut.testSupport.getHomeView())
+    }
+    
 }
 
 extension XCTestCase {
+    
+    /// To check if the method are calling on time
     class MockDataStore: DataStoreProtocol {
-        func save(for key: Planetz.DSKeys, value: Data) { }
-        func get(key: Planetz.DSKeys) -> Data? { return nil }
+        var isCalledSaveMethodWithPlanetKey = false
+        var isCalledToReadPersistingData = false
+        func save(for key: Planetz.DSKeys, value: Data) {
+            isCalledSaveMethodWithPlanetKey = key == .planets
+        }
+        
+        func get(key: Planetz.DSKeys) -> Data? {
+            isCalledToReadPersistingData = true
+            return nil
+        }
+    }
+    
+    class MockPlanetServiceClinet: PlanetService {
+        func fetchPlanets() async -> [Planetz.Planet] {
+            return MockPlanetResponse.planets
+        }
+    }
+    
+    class EmptyPlanetServiceClinet: PlanetService {
+        func fetchPlanets() async -> [Planetz.Planet] {
+            return []
+        }
     }
 }

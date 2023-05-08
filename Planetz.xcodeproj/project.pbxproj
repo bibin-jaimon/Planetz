@@ -41,6 +41,7 @@
 		7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */; };
 		7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */; };
 		7BBF85B72A08B10500D46853 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */; };
+		7BBF85BB2A092ECE00D46853 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF85BA2A092ECE00D46853 /* EnvironmentTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapterTest.swift; sourceTree = "<group>"; };
 		7BBF85B42A08308B00D46853 /* Planetz.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Planetz.xctestplan; sourceTree = "<group>"; };
 		7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
+		7BBF85BA2A092ECE00D46853 /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		7B6400982A057D4100A66595 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7BBF85B82A092DEB00D46853 /* Views */,
 				7BBF85B52A08B0EA00D46853 /* Controllers */,
 				7BB118802A067D53007E1A38 /* Mocks */,
 				7B6400992A057D4900A66595 /* Networking */,
@@ -143,6 +146,7 @@
 				7BB118A72A0819F3007E1A38 /* Adapters */,
 				7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */,
 				7BB1187E2A067A56007E1A38 /* NetworkingTests.swift */,
+				7BBF85BA2A092ECE00D46853 /* EnvironmentTests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -364,6 +368,21 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		7BBF85B82A092DEB00D46853 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7BBF85B92A092DF100D46853 /* Home */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7BBF85B92A092DF100D46853 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -531,6 +550,7 @@
 				7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */,
 				7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */,
 				7B332C1B2A0823C300F5E32F /* UrlRequestAdapterTests.swift in Sources */,
+				7BBF85BB2A092ECE00D46853 /* EnvironmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

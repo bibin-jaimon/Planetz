@@ -14,7 +14,7 @@ final class PlanetListCellTests: XCTestCase {
         XCTAssertEqual(PlanetListCell.identifier, "PlanetListCell")
     }
 
-    func testExample() throws {
+    func testPlanetListCell_whenProvidingPlanetData() throws {
         
         let sut = PlanetListCell()
         let planet = MockPlanetResponse.planets.first!

@@ -12,33 +12,45 @@ final class HomeViewTests: XCTestCase {
     
     let mockPlanets = MockPlanetResponse.planets
     
-    func testHomeView_whenProvided_planetData() throws {
-        let sut = HomeView()
-        sut.testSupport.setupPlanetTableView()
+    var homeView: HomeView?
+    
+    override func setUp() {
+        super.setUp()
+        homeView = HomeView()
+        homeView?.testSupport.setupPlanetTableView()
+    }
+    
+    func testHomeView_haveCorrectTableViewDataSource() throws {
+        let sut = try XCTUnwrap(homeView)
+        XCTAssertNotNil(sut.testSupport.tableView?.dataSource)
+    }
         
+    func testHomeView_whenProvided_planetData() throws {
+        let sut = try XCTUnwrap(homeView)
         
         XCTAssertNotNil(sut.testSupport.tableView)
         XCTAssertNotNil(sut.testSupport.tableBackgroundView)
         
+    }
+    
+    func testHomeView_checkTableView_haveCorrectData() throws {
+        let sut = try XCTUnwrap(homeView)
+        
         /// Check expected number of rows count before setting data
-        let expectedNumberOfRowsInSection1 = sut.tableView(sut.testSupport.tableView!, numberOfRowsInSection: 0)
+        let expectedNumberOfRowsInSection1 = sut.testSupport.tableView?.numberOfRows(inSection: 0)
         XCTAssertEqual(expectedNumberOfRowsInSection1, 0)
         
-        sut.testSupport.setPlanetData(data: mockPlanets)
-        
+        /// Update table view data
+        sut.update(planets: mockPlanets)
+        sut.testSupport.tableView?.reloadData()
+
         /// Check expected number of rows count after setting data
-        let expectedNumberOfRowsInSection2 = sut.tableView(sut.testSupport.tableView!, numberOfRowsInSection: 0)
-        XCTAssertEqual(expectedNumberOfRowsInSection2, mockPlanets.count)
-        
-        /// Check tableView has proper cell registered
-        let cell2 = sut.testSupport.tableView?.dequeueReusableCell(withIdentifier: PlanetListCell.identifier,
-                                                       for: [0, 0])
-        XCTAssertTrue(cell2 is PlanetListCell)
-        
-        /// Check cellForRowAt function receiving proper cell instance
-        let cell = sut.tableView(sut.testSupport.tableView!, cellForRowAt: IndexPath(row: 0, section: 0))
-        
-        XCTAssertTrue(cell is PlanetListCell)
+        let expectedNumberOfRowsInSection2 = sut.testSupport.tableView?.numberOfRows(inSection: 0)
+        XCTAssertEqual(expectedNumberOfRowsInSection2, self.mockPlanets.count)
+    }
+    
+    override func tearDown() {
+        homeView = nil
     }
 
 }

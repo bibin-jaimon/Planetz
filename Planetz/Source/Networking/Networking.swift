@@ -18,8 +18,8 @@ enum NetworkError: Error, Equatable {
 /// To be used for  handling all network related interactions
 protocol NetworkingProtocol {
     /// Request data from an endpoint
-    ///  - Parameters
-    ///  - adapter: instance of BaseRequestAdapter which used to build the URLRequest
+    ///  - Parameters:
+    ///     - adapter: instance of BaseRequestAdapter which used to build the URLRequest
     ///  - Returns: Tuple with data and NetworkError. Eg: (Data?, NetworkError?)
     func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?)
 }
@@ -30,10 +30,7 @@ final class Networking: NetworkingProtocol {
     init(session: URLSession = .shared) {
         self.session = session
     }
-    
-    /// Request data from an endpoint
-    ///  - Parameter adapter: instance of BaseRequestAdapter which used to build the URLRequest
-    ///  - Returns: Tuple with data and NetworkError. Eg: (Data?, NetworkError?)
+
     func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
         guard let request: URLRequest = adapter.build() else { return (nil, .invalidRequest) }
         

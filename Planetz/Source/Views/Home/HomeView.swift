@@ -98,8 +98,9 @@ extension HomeView: UITableViewDataSource {
 
 #if DEBUG
 
-// MARK: - To support unit test
+// MARK: - User for unit test
 
+/// To access private properties and methods for testing
 extension HomeView {
     
     var testSupport: TestSupport {

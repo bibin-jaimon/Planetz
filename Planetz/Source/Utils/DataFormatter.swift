@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// To be used to format 
 protocol DataFormatter {
     func decodeToJSON<T: Decodable>(to: T.Type, for data: Data) -> T?
     func encodeToData<T: Encodable>(_ data: T) -> Data?

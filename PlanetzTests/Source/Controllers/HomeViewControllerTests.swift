@@ -13,11 +13,11 @@ class HomeViewControllerTests: XCTestCase {
     func testHomeViewController_whenProvidedEmptyPlanet_planetArrayShouldHaveCorrectCount() {
 
         let mockDataStore = MockDataStore()
-        let expt = expectation(description: "TestHomeViewController")
         let sut = HomeViewController(planetServiceClinet: EmptyPlanetServiceClinet(),
                                      dataStore: mockDataStore,
                                      dataFormatter: JSONFormatter())
         
+        let expt = expectation(description: "TestHomeViewController")
         sut.testSupport.fetchPlanetData {
             let planetCount = sut.testSupport.planets.count
             XCTAssertEqual(planetCount, 0)
@@ -64,6 +64,7 @@ extension XCTestCase {
     class MockDataStore: DataStoreProtocol {
         var isCalledSaveMethodWithPlanetKey = false
         var isCalledToReadPersistingData = false
+
         func save(for key: Planetz.DSKeys, value: Data) {
             isCalledSaveMethodWithPlanetKey = key == .planets
         }
@@ -74,12 +75,14 @@ extension XCTestCase {
         }
     }
     
+    /// Mock instance with fetchPlanet returning array with Planet instance
     class MockPlanetServiceClinet: PlanetService {
         func fetchPlanets() async -> [Planetz.Planet] {
             return MockPlanetResponse.planets
         }
     }
     
+    /// Mock instance with fetchPlanet returning empty array
     class EmptyPlanetServiceClinet: PlanetService {
         func fetchPlanets() async -> [Planetz.Planet] {
             return []

@@ -83,8 +83,9 @@ class HomeViewController: UIViewController {
 
 #if DEBUG
 
-// MARK: - Unit testing
+// MARK: - User for unit test
 
+/// To access private properties and methods for testing
 extension HomeViewController {
     
     var testSupport: TestSupport {

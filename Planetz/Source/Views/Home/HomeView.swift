@@ -11,7 +11,7 @@ class HomeView: BaseView {
     
     private var planet: [Planet] = []
     
-    let tableView: UITableView = {
+    private let tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -23,7 +23,7 @@ class HomeView: BaseView {
         return view
     }()
     
-    let emptyInfoView = InfoView()
+    private let emptyInfoView = InfoView()
     
     init() {
         super.init(frame: .zero)
@@ -82,7 +82,7 @@ class HomeView: BaseView {
 
 extension HomeView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        self.planet.count
+        return self.planet.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -95,3 +95,44 @@ extension HomeView: UITableViewDataSource {
     }
     
 }
+
+#if DEBUG
+
+// MARK: - To support unit test
+
+extension HomeView {
+    
+    var testSupport: TestSupport {
+        TestSupport(instance: self)
+    }
+    
+    struct TestSupport {
+        private let instance: HomeView
+        
+        var tableView: UITableView? {
+            instance.tableView
+        }
+        
+        var planets: [Planet] {
+            instance.planet
+        }
+        
+        var tableBackgroundView: UIView? {
+            instance.emptyInfoView
+        }
+        
+        fileprivate init(instance: HomeView) {
+            self.instance = instance
+        }
+        
+        func setPlanetData(data: [Planet]) {
+            instance.planet = data
+        }
+        
+        func setupPlanetTableView() {
+            instance.setupPlanetTableView()
+        }
+    }
+}
+
+#endif

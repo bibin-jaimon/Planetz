@@ -8,7 +8,10 @@
 import UIKit
 
 protocol BaseViewConstrucable {
+    /// To be used to add all the view to subviews
     func constructView()
+    
+    /// To be used to configure the view like add constraints, change colors, etc.
     func configureView()
 }
 

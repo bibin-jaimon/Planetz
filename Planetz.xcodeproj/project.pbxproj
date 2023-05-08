@@ -40,6 +40,7 @@
 		7BB118A32A07859D007E1A38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A22A07859D007E1A38 /* Strings.swift */; };
 		7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */; };
 		7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */; };
+		7BB6B4F82A0941F3000ED24E /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6B4F72A0941F3000ED24E /* HomeViewTests.swift */; };
 		7BBF85B72A08B10500D46853 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */; };
 		7BBF85BB2A092ECE00D46853 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF85BA2A092ECE00D46853 /* EnvironmentTests.swift */; };
 /* End PBXBuildFile section */
@@ -99,6 +100,7 @@
 		7BB118A22A07859D007E1A38 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetResponse.swift; sourceTree = "<group>"; };
 		7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapterTest.swift; sourceTree = "<group>"; };
+		7BB6B4F72A0941F3000ED24E /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
 		7BBF85B42A08308B00D46853 /* Planetz.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Planetz.xctestplan; sourceTree = "<group>"; };
 		7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		7BBF85BA2A092ECE00D46853 /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 		7BBF85B92A092DF100D46853 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				7BB6B4F72A0941F3000ED24E /* HomeViewTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 				7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */,
 				7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */,
 				7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */,
+				7BB6B4F82A0941F3000ED24E /* HomeViewTests.swift in Sources */,
 				7B332C1B2A0823C300F5E32F /* UrlRequestAdapterTests.swift in Sources */,
 				7BBF85BB2A092ECE00D46853 /* EnvironmentTests.swift in Sources */,
 			);

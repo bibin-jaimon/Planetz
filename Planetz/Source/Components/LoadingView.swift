@@ -42,3 +42,35 @@ class LoadingView: BaseView {
     }
 
 }
+
+#if DEBUG
+
+extension LoadingView {
+    
+    var testSupport: TestSupport {
+        TestSupport(instance: self)
+    }
+    
+    struct TestSupport {
+        private let instance: LoadingView
+        
+        fileprivate init(instance: LoadingView) {
+            self.instance = instance
+        }
+        
+        var activityIndicator: UIActivityIndicatorView {
+            instance.activityIndicator
+        }
+        
+        func startAnimating() {
+            instance.startAnimating()
+        }
+        
+        func stopAnimating() {
+            instance.stopAnimating()
+        }
+    }
+    
+}
+
+#endif

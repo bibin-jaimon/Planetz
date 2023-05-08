@@ -7,9 +7,20 @@
 
 import Foundation
 
-/// To be used to format 
+/// To be used to format data
 protocol DataFormatter {
+    
+    /// To be used to decode Data to given type
+    /// - Parameters:
+    ///     - to: Type of the data to be converted
+    ///     - for: The source data
+    /// - Returns: Data returned in provided type
     func decodeToJSON<T: Decodable>(to: T.Type, for data: Data) -> T?
+    
+    /// To be used to encode to type Data
+    /// - Parameters:
+    ///     - data: The source data
+    /// - Returns: Returning optional encoded item with type Data
     func encodeToData<T: Encodable>(_ data: T) -> Data?
 }
 

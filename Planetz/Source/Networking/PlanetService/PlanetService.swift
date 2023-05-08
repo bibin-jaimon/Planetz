@@ -28,12 +28,17 @@ class PlanetServiceClient: PlanetService {
         self.dataFormatter = dataFormatter
     }
     
-    
     func fetchPlanets() async -> [Planet] {
         let adapter = PlanetListRequestAdapter(path: "/planets", method: .get, environment: environment)
-        let (res, _) = await networking.fetch(adapter)
-        guard let data = res else { return [] }
-        guard let formatterData = dataFormatter.decodeToJSON(to: PlanetListResponseModel.self, for: data) else { return [] }
-        return formatterData.results
+        guard let result = try? await networking.fetch(adapter) else { return [] }
+        
+        switch result {
+        case .success(let data):
+            guard let formatterData = dataFormatter
+                .decodeToJSON(to: PlanetListResponseModel.self, for: data) else { return [] }
+            return formatterData.results
+        case .failure:
+            return []
+        }
     }
 }

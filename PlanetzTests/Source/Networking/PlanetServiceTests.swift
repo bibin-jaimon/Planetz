@@ -13,8 +13,8 @@ final class PlanetServiceTests: XCTestCase {
     func testFetchPlanets_failed_returnsEmptyArray() async throws {
         
         class MockNetworking: NetworkingProtocol {
-            func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
-                return (nil, .invalidRequest)
+            func fetch(_ adapter: BaseRequestAdapter) async -> Result<Data, NetworkError> {
+                .failure(.invalidRequest)
             }
         }
         
@@ -32,8 +32,8 @@ final class PlanetServiceTests: XCTestCase {
     
     func testFetchPlanets_success_returnsPlanetData() async {
         class MockNetworking: NetworkingProtocol {
-            func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
-                return (MockPlanetResponse.sampleData.data(using: .utf8), nil)
+            func fetch(_ adapter: BaseRequestAdapter) async -> Result<Data, NetworkError> {
+                return .success(MockPlanetResponse.sampleData.data(using: .utf8)!)
             }
         }
         

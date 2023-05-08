@@ -43,6 +43,8 @@
 		7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */; };
 		7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */; };
 		7BB6B4F82A0941F3000ED24E /* HomeViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB6B4F72A0941F3000ED24E /* HomeViewTests.swift */; };
+		7BBBCE322A099FFB009F91D0 /* LoadingViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBCE312A099FFB009F91D0 /* LoadingViewTests.swift */; };
+		7BBBCE342A09A132009F91D0 /* DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBBCE332A09A132009F91D0 /* DateFormatterTests.swift */; };
 		7BBF85B72A08B10500D46853 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */; };
 		7BBF85BB2A092ECE00D46853 /* EnvironmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF85BA2A092ECE00D46853 /* EnvironmentTests.swift */; };
 /* End PBXBuildFile section */
@@ -105,6 +107,8 @@
 		7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetResponse.swift; sourceTree = "<group>"; };
 		7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapterTest.swift; sourceTree = "<group>"; };
 		7BB6B4F72A0941F3000ED24E /* HomeViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewTests.swift; sourceTree = "<group>"; };
+		7BBBCE312A099FFB009F91D0 /* LoadingViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewTests.swift; sourceTree = "<group>"; };
+		7BBBCE332A09A132009F91D0 /* DateFormatterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterTests.swift; sourceTree = "<group>"; };
 		7BBF85B42A08308B00D46853 /* Planetz.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Planetz.xctestplan; sourceTree = "<group>"; };
 		7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 		7BBF85BA2A092ECE00D46853 /* EnvironmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentTests.swift; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		7B6400982A057D4100A66595 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7BBBCE302A0997FA009F91D0 /* Utils */,
 				7B8293972A09706D003E42FE /* Components */,
 				7BBF85B82A092DEB00D46853 /* Views */,
 				7BBF85B52A08B0EA00D46853 /* Controllers */,
@@ -316,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				7B8293982A097081003E42FE /* InfoViewTests.swift */,
+				7BBBCE312A099FFB009F91D0 /* LoadingViewTests.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -373,6 +379,14 @@
 				7B332C1A2A0823C300F5E32F /* UrlRequestAdapterTests.swift */,
 			);
 			path = Adapters;
+			sourceTree = "<group>";
+		};
+		7BBBCE302A0997FA009F91D0 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7BBBCE332A09A132009F91D0 /* DateFormatterTests.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		7BBF85B52A08B0EA00D46853 /* Controllers */ = {
@@ -564,6 +578,8 @@
 				7BB118822A067D70007E1A38 /* MockURLSessionProtocol.swift in Sources */,
 				7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */,
 				7BBF85B72A08B10500D46853 /* HomeViewControllerTests.swift in Sources */,
+				7BBBCE322A099FFB009F91D0 /* LoadingViewTests.swift in Sources */,
+				7BBBCE342A09A132009F91D0 /* DateFormatterTests.swift in Sources */,
 				7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */,
 				7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */,
 				7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */,

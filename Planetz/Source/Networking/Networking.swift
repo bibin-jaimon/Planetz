@@ -21,7 +21,7 @@ protocol NetworkingProtocol {
     ///  - Parameters:
     ///     - adapter: instance of BaseRequestAdapter which used to build the URLRequest
     ///  - Returns: Tuple with data and NetworkError. Eg: (Data?, NetworkError?)
-    func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?)
+    func fetch(_ adapter: BaseRequestAdapter) async throws -> Result<Data, NetworkError>
 }
 
 final class Networking: NetworkingProtocol {
@@ -31,21 +31,22 @@ final class Networking: NetworkingProtocol {
         self.session = session
     }
 
-    func fetch(_ adapter: BaseRequestAdapter) async -> (Data?, NetworkError?) {
-        guard let request: URLRequest = adapter.build() else { return (nil, .invalidRequest) }
+    func fetch(_ adapter: BaseRequestAdapter) async throws -> Result<Data, NetworkError> {
+        guard let request: URLRequest = adapter.build() else {
+            return .failure(.invalidRequest)
+        }
         
         do {
-            let (data, _) = try await session.data(for: request, delegate: nil)
-            return (data, nil)
+            let (data, _) = try await session.data(for: request)
+            return .success(data)
         } catch(let error) {
             let kNSError = error as NSError
             
-            // Handle No Internet issue
             if kNSError.code == NSURLErrorNotConnectedToInternet {
-                return (nil, .noInternet)
+                return .failure(.noInternet)
             }
             
-            return (nil, .failedRequest(description: error.localizedDescription))
+            return .failure(.failedRequest(description: error.localizedDescription))
         }
     }
 }

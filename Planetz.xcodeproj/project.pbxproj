@@ -40,6 +40,7 @@
 		7BB118A32A07859D007E1A38 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A22A07859D007E1A38 /* Strings.swift */; };
 		7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */; };
 		7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */; };
+		7BBF85B72A08B10500D46853 /* HomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		7BB118A52A080E6A007E1A38 /* MockPlanetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPlanetResponse.swift; sourceTree = "<group>"; };
 		7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapterTest.swift; sourceTree = "<group>"; };
 		7BBF85B42A08308B00D46853 /* Planetz.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Planetz.xctestplan; sourceTree = "<group>"; };
+		7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		7B6400982A057D4100A66595 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				7BBF85B52A08B0EA00D46853 /* Controllers */,
 				7BB118802A067D53007E1A38 /* Mocks */,
 				7B6400992A057D4900A66595 /* Networking */,
 			);
@@ -353,6 +356,14 @@
 			path = Adapters;
 			sourceTree = "<group>";
 		};
+		7BBF85B52A08B0EA00D46853 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				7BBF85B62A08B10500D46853 /* HomeViewControllerTests.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -515,6 +526,7 @@
 				7B332C192A081FE000F5E32F /* PathRequestAdapterTests.swift in Sources */,
 				7BB118822A067D70007E1A38 /* MockURLSessionProtocol.swift in Sources */,
 				7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */,
+				7BBF85B72A08B10500D46853 /* HomeViewControllerTests.swift in Sources */,
 				7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */,
 				7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */,
 				7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */,

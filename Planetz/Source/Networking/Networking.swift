@@ -15,6 +15,7 @@ enum NetworkError: Error, Equatable {
     case failedRequest(description: String)
 }
 
+/// To be used for  handling all network related interactions
 protocol NetworkingProtocol {
     /// Request data from an endpoint
     ///  - Parameters

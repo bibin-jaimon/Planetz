@@ -9,7 +9,7 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
-    private var networkClient: PlanetService
+    private var planetServiceClinet: PlanetService
     private var dataStore: DataStoreProtocol
     private var homeView: HomeView?
     private var dataFormatter: DataFormatter
@@ -20,8 +20,8 @@ class HomeViewController: UIViewController {
         }
     }
     
-    init(networkClient: PlanetService, dataStore: DataStoreProtocol, dataFormatter: DataFormatter) {
-        self.networkClient = networkClient
+    init(planetServiceClinet: PlanetService, dataStore: DataStoreProtocol, dataFormatter: DataFormatter) {
+        self.planetServiceClinet = planetServiceClinet
         self.dataStore = dataStore
         self.dataFormatter = dataFormatter
         super.init(nibName: nil, bundle: nil)
@@ -38,34 +38,36 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchPlanetData()
-        
+        self.homeView?.startLoader()
+        fetchPlanetData({ [weak self] in
+            self?.homeView?.stopLoader()
+        })
     }
     
-    private func fetchPlanetData() {
-        self.homeView?.startLoader()
+    func fetchPlanetData(_ completion: (() -> Void)? = nil) {
         Task { [weak self] in
-            guard let self = self else { return }
-            let planets = await networkClient.fetchPlanets()
-            self.handle(planets)
+            guard let strongSelf = self else { return }
+            let planets = await strongSelf.planetServiceClinet.fetchPlanets()
+            strongSelf.handle(planets)
+            completion?()
         }
     }
     
+    /// To handle data from server and local storage
     private func handle(_ planets: [Planet]) {
         if planets.isEmpty {
             self.planets = getSavedPlanets()
             return
         }
         self.planets = planets
-        self.save(planets)
+        self.saveToDataStore(planets)
     }
     
     private func updateHomeView(data: [Planet]) {
         self.homeView?.update(planets: data)
-        self.homeView?.stopLoader()
     }
     
-    private func save(_ planets: [Planet]) {
+    private func saveToDataStore(_ planets: [Planet]) {
         guard let data = dataFormatter.encodeToData(planets) else { return }
         dataStore.save(for: .planets, value: data)
     }

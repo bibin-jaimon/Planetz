@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// To be used to implment /planets related services
 protocol PlanetService {
+    /// To fetch array of planets
+    /// - Returns: Array of Planet objects
     func fetchPlanets() async -> [Planet]
 }
 

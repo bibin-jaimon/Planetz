@@ -27,6 +27,7 @@
 		7B6846852A05587000CC5DD0 /* PlanetService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846842A05587000CC5DD0 /* PlanetService.swift */; };
 		7B6846892A05741400CC5DD0 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846882A05741400CC5DD0 /* Networking.swift */; };
 		7B68468B2A05748200CC5DD0 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68468A2A05748200CC5DD0 /* Environment.swift */; };
+		7B8293962A096905003E42FE /* PlanetListCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B8293952A096905003E42FE /* PlanetListCellTests.swift */; };
 		7BB1187F2A067A56007E1A38 /* NetworkingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB1187E2A067A56007E1A38 /* NetworkingTests.swift */; };
 		7BB118822A067D70007E1A38 /* MockURLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118812A067D70007E1A38 /* MockURLSessionProtocol.swift */; };
 		7BB118842A067EDD007E1A38 /* MockEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BB118832A067EDD007E1A38 /* MockEnvironment.swift */; };
@@ -87,6 +88,7 @@
 		7B6846842A05587000CC5DD0 /* PlanetService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetService.swift; sourceTree = "<group>"; };
 		7B6846882A05741400CC5DD0 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		7B68468A2A05748200CC5DD0 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		7B8293952A096905003E42FE /* PlanetListCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListCellTests.swift; sourceTree = "<group>"; };
 		7BB1187E2A067A56007E1A38 /* NetworkingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingTests.swift; sourceTree = "<group>"; };
 		7BB118812A067D70007E1A38 /* MockURLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSessionProtocol.swift; sourceTree = "<group>"; };
 		7BB118832A067EDD007E1A38 /* MockEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEnvironment.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 			isa = PBXGroup;
 			children = (
 				7BB6B4F72A0941F3000ED24E /* HomeViewTests.swift */,
+				7B8293952A096905003E42FE /* PlanetListCellTests.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B8293962A096905003E42FE /* PlanetListCellTests.swift in Sources */,
 				7BB118862A067EFE007E1A38 /* MockAdapter.swift in Sources */,
 				7BB1187F2A067A56007E1A38 /* NetworkingTests.swift in Sources */,
 				7B332C192A081FE000F5E32F /* PathRequestAdapterTests.swift in Sources */,

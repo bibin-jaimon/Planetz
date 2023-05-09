@@ -33,6 +33,14 @@ final class DateFormatterTests: XCTestCase {
         XCTAssertEqual(1, actualData.count)
     }
     
+    func testDataFormatter_whenProvidedWrongType_shouldReturnsNil() throws {
+        let sut = try XCTUnwrap(dataFormatter)
+        let inputData = try XCTUnwrap(sut.encodeToData(MockPlanetResponse.planets))
+        let result = sut.decodeToJSON(to: Planet.self, for: inputData)
+        
+        XCTAssertNil(result)
+    }
+    
     override func tearDown() {
         dataFormatter = nil
     }

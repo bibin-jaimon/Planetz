@@ -266,14 +266,14 @@
 		7B68467B2A054CAF00CC5DD0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				7BB118A42A0785B2007E1A38 /* Resources */,
-				7BB1189A2A076800007E1A38 /* DataStore */,
-				7BB1188C2A06BA45007E1A38 /* Utils */,
-				7BB118892A06B873007E1A38 /* Components */,
-				7B6846832A05584700CC5DD0 /* Networking */,
 				7B68467E2A054ED100CC5DD0 /* Models */,
 				7B6846792A054B8F00CC5DD0 /* Views */,
 				7B6846782A054B7400CC5DD0 /* Controllers */,
+				7B6846832A05584700CC5DD0 /* Networking */,
+				7BB118892A06B873007E1A38 /* Components */,
+				7BB1188C2A06BA45007E1A38 /* Utils */,
+				7BB1189A2A076800007E1A38 /* DataStore */,
+				7BB118A42A0785B2007E1A38 /* Resources */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -309,8 +309,8 @@
 		7B6846832A05584700CC5DD0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				7B6400A42A06477600A66595 /* Adapters */,
 				7B64009C2A057E7200A66595 /* PlanetService */,
+				7B6400A42A06477600A66595 /* Adapters */,
 				7B6846882A05741400CC5DD0 /* Networking.swift */,
 				7B68468A2A05748200CC5DD0 /* Environment.swift */,
 			);

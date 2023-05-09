@@ -21,12 +21,13 @@
 </tr>
 <table>
 
-- Tech Used - UIKit | XCTestCase | Swift
+- Tech Used - Swift | UIKit | XCTestCase | Programatic AutoLayout
 - The app displays list of Planets data from `https://swapi.dev/api/planets`. 
-- Used persistance UserDefault to store the data for offline support
+- Used persistance UserDefault to store the data for offline support.
 - Architecture used is MVC. No third party libraries are used in the app.
 - Used Dependency injection for decoupling, testability, reusability etc.
 - Used progrmatic UI with UIKit and AutoLayout for constructing and configuring the views.
+- To run unit tests, open Xcode and select `Product > Test`
 - Testcoverage - 81.8%
 - Basic project stucture
     
@@ -70,3 +71,6 @@ git clone git@github.com:bibin-jaimon/Planetz.git
 Make sure you are in `development` brach to run the app with latest changes.
 
 Open `Planetz.xcodeproj/` and select `Planetz` scheme to run the app.
+
+---
+Contact: bibinjaimon@gmail.com

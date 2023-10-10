@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B6846442A05418200CC5DD0"
-               BuildableName = "Planetz.app"
+               BuildableName = "Planetz App.app"
                BlueprintName = "Planetz"
                ReferencedContainer = "container:Planetz.xcodeproj">
             </BuildableReference>
@@ -59,7 +59,7 @@
       </Testables>
    </TestAction>
    <LaunchAction
-      buildConfiguration = "Debug"
+      buildConfiguration = "Release"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B6846442A05418200CC5DD0"
-            BuildableName = "Planetz.app"
+            BuildableName = "Planetz App.app"
             BlueprintName = "Planetz"
             ReferencedContainer = "container:Planetz.xcodeproj">
          </BuildableReference>
@@ -90,7 +90,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B6846442A05418200CC5DD0"
-            BuildableName = "Planetz.app"
+            BuildableName = "Planetz App.app"
             BlueprintName = "Planetz"
             ReferencedContainer = "container:Planetz.xcodeproj">
          </BuildableReference>

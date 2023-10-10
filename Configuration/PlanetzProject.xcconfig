@@ -1,0 +1,11 @@
+//
+//  PlanetzProject.xcconfig
+//  Planetz
+//
+//  Created by Bibin Jaimon on 10/10/23.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+PRODUCT_NAME = Planetz App

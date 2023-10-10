@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeView: BaseView {
+class HomeView: UIView {
     
     private var planet: [Planet] = []
     
@@ -32,27 +32,34 @@ class HomeView: BaseView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    override func constructView() {
-        addSubview(tableView)
-        addSubview(loadingView)
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupTableView()
+        setupPlanetTableView()
+        setuploadingView()
     }
     
-    override func configureView() {
-        
+    private func setuploadingView() {
+        addSubview(loadingView)
         NSLayoutConstraint.activate([
-            loadingView.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
-            loadingView.safeAreaLayoutGuide.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor)
+            loadingView.safeAreaLayoutGuide.centerXAnchor.constraint(
+                equalTo: self.safeAreaLayoutGuide.centerXAnchor
+            ),
+            loadingView.safeAreaLayoutGuide.centerYAnchor.constraint(
+                equalTo: self.safeAreaLayoutGuide.centerYAnchor
+            )
         ])
-        
+    }
+    
+    private func setupTableView() {
+        addSubview(tableView)
         NSLayoutConstraint.activate([
             self.tableView.safeAreaLayoutGuide.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor),
             self.tableView.safeAreaLayoutGuide.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.trailingAnchor),
             self.tableView.safeAreaLayoutGuide.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor),
             self.tableView.safeAreaLayoutGuide.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor)
         ])
-        
-        setupPlanetTableView()
     }
     
     private func setupPlanetTableView() {

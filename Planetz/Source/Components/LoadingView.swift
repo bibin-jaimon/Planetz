@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoadingView: BaseView {
+class LoadingView: UIView {
     private var activityIndicator: UIActivityIndicatorView = {
         let indiacator = UIActivityIndicatorView(style: .large)
         indiacator.translatesAutoresizingMaskIntoConstraints = false
@@ -18,17 +18,20 @@ class LoadingView: BaseView {
         super.init(frame: .zero)
     }
     
-    override func constructView() {
-        self.addSubview(activityIndicator)
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupActivityIndicator()
     }
     
-    override func configureView() {
+    private func setupActivityIndicator() {
+        self.addSubview(activityIndicator)
         NSLayoutConstraint.activate([
             activityIndicator.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             activityIndicator.safeAreaLayoutGuide.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor)
         ])
+        self.bringSubviewToFront(activityIndicator)
     }
-    
+
     func startAnimating() {
         activityIndicator.startAnimating()
     }

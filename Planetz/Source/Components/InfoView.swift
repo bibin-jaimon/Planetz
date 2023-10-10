@@ -7,7 +7,7 @@
 
 import UIKit
 
-class InfoView: BaseView {
+class InfoView: UIView {
     
     private let infoMessageLabel: UILabel = {
         let label = UILabel()
@@ -15,11 +15,12 @@ class InfoView: BaseView {
         return label
     }()
 
-    override func constructView() {
-        addSubview(infoMessageLabel)
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupInfoMessageLabel()
     }
-    
-    override func configureView() {
+    private func setupInfoMessageLabel() {
+        addSubview(infoMessageLabel)
         NSLayoutConstraint.activate([
             infoMessageLabel.safeAreaLayoutGuide.centerXAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerXAnchor),
             infoMessageLabel.safeAreaLayoutGuide.centerYAnchor.constraint(equalTo: self.safeAreaLayoutGuide.centerYAnchor)

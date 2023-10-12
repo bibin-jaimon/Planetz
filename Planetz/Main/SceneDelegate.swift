@@ -40,7 +40,9 @@ extension SceneDelegate {
     }
     
     private func createHomeViewController() -> HomeViewController {
-        let environment = DefaultEnvironment()
+        /// Based on the identifier we can change the environment
+        /// Can save the environment identifier in userdefault and pass it here
+        let environment = Environment(identifier: .development)
         let netwoking = Networking(session: .shared)
         let dataStore: DataStoreProtocol = DataStore()
         let planetService: PlanetService = PlanetServiceClient(environment: environment, networking: netwoking)

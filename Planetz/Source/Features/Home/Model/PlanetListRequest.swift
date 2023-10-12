@@ -11,8 +11,8 @@ struct PlanetListRequest: BaseRequestAdapter {
     var route: String
     var method: HTTPMethod
     var parameters: Parameters?
-    var environment: Environment
+    var environment: EnvironmentProvider
     var requestURLString: String {
-        environment.baseURL + route
+        environment.current.baseURL + route
     }
 }

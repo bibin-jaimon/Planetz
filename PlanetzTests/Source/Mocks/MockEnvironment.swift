@@ -8,6 +8,11 @@
 import Foundation
 @testable import Planetz
 
-struct MockEnvironment: Environment {
-    var baseURL: String { "https://swapi.dev/api" }
+struct MockEnvConfig: EnvironmentConfig {
+    var baseURL: String
+    var identifier: Planetz.EnvironmentIdentifier = .development
+}
+
+struct MockEnvironment: EnvironmentProvider {
+    var current: Planetz.EnvironmentConfig = MockEnvConfig(baseURL: "fake-endpoint")
 }

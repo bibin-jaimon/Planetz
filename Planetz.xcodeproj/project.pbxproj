@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7B0E640D2AD5886500A52E75 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0E640C2AD5886500A52E75 /* HomeViewModel.swift */; };
-		7B332C192A081FE000F5E32F /* PathRequestAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B332C182A081FE000F5E32F /* PathRequestAdapterTests.swift */; };
-		7B332C1B2A0823C300F5E32F /* UrlRequestAdapterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B332C1A2A0823C300F5E32F /* UrlRequestAdapterTests.swift */; };
 		7B64009B2A057D8400A66595 /* PlanetServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */; };
 		7B6400A02A0581AC00A66595 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */; };
 		7B6400A22A05851A00A66595 /* PlanetListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A12A05851A00A66595 /* PlanetListRequest.swift */; };
@@ -62,8 +60,6 @@
 		7B0E64142AD5ADC600A52E75 /* Planetz-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Planetz-Debug.xcconfig"; sourceTree = "<group>"; };
 		7B0E64152AD5ADDD00A52E75 /* PlanetzProject.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = PlanetzProject.xcconfig; sourceTree = "<group>"; };
 		7B0E64162AD5AE2B00A52E75 /* Planetz-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Planetz-Release.xcconfig"; sourceTree = "<group>"; };
-		7B332C182A081FE000F5E32F /* PathRequestAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathRequestAdapterTests.swift; sourceTree = "<group>"; };
-		7B332C1A2A0823C300F5E32F /* UrlRequestAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestAdapterTests.swift; sourceTree = "<group>"; };
 		7B64009A2A057D8400A66595 /* PlanetServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetServiceTests.swift; sourceTree = "<group>"; };
 		7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
 		7B6400A12A05851A00A66595 /* PlanetListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListRequest.swift; sourceTree = "<group>"; };
@@ -162,6 +158,7 @@
 		7B0E64132AD589A800A52E75 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7B6400A12A05851A00A66595 /* PlanetListRequest.swift */,
 				7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */,
 				7B6846812A0553C700CC5DD0 /* Planet.swift */,
 			);
@@ -206,18 +203,9 @@
 		7B64009C2A057E7200A66595 /* PlanetService */ = {
 			isa = PBXGroup;
 			children = (
-				7B6400A32A05884800A66595 /* PlanetListRequestAdapter */,
 				7B6846842A05587000CC5DD0 /* PlanetService.swift */,
 			);
 			path = PlanetService;
-			sourceTree = "<group>";
-		};
-		7B6400A32A05884800A66595 /* PlanetListRequestAdapter */ = {
-			isa = PBXGroup;
-			children = (
-				7B6400A12A05851A00A66595 /* PlanetListRequest.swift */,
-			);
-			path = PlanetListRequestAdapter;
 			sourceTree = "<group>";
 		};
 		7B6400A42A06477600A66595 /* Adapters */ = {
@@ -368,8 +356,6 @@
 			isa = PBXGroup;
 			children = (
 				7BB118A82A081A14007E1A38 /* BaseRequestAdapterTest.swift */,
-				7B332C182A081FE000F5E32F /* PathRequestAdapterTests.swift */,
-				7B332C1A2A0823C300F5E32F /* UrlRequestAdapterTests.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -550,7 +536,6 @@
 				7B8293962A096905003E42FE /* PlanetListCellTests.swift in Sources */,
 				7BB118862A067EFE007E1A38 /* MockAdapter.swift in Sources */,
 				7BB1187F2A067A56007E1A38 /* NetworkingTests.swift in Sources */,
-				7B332C192A081FE000F5E32F /* PathRequestAdapterTests.swift in Sources */,
 				7BB118822A067D70007E1A38 /* MockURLSessionProtocol.swift in Sources */,
 				7BB118A92A081A14007E1A38 /* BaseRequestAdapterTest.swift in Sources */,
 				7BBF85B72A08B10500D46853 /* HomeViewControllerTests.swift in Sources */,
@@ -563,7 +548,6 @@
 				7BB118A62A080E6A007E1A38 /* MockPlanetResponse.swift in Sources */,
 				7B8293992A097081003E42FE /* InfoViewTests.swift in Sources */,
 				7BB6B4F82A0941F3000ED24E /* HomeViewTests.swift in Sources */,
-				7B332C1B2A0823C300F5E32F /* UrlRequestAdapterTests.swift in Sources */,
 				7BBF85BB2A092ECE00D46853 /* EnvironmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

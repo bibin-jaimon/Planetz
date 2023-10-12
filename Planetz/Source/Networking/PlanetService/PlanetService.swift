@@ -17,10 +17,10 @@ protocol PlanetService {
 class PlanetServiceClient: PlanetService {
     
     private var networking: NetworkingProtocol
-    private var environment: Environment
+    private var environment: EnvironmentProvider
     private var dataFormatter: DataFormatter
     
-    required init(environment: Environment,
+    required init(environment: EnvironmentProvider,
                   networking: NetworkingProtocol,
                   dataFormatter: DataFormatter = JSONFormatter()) {
         self.networking = networking

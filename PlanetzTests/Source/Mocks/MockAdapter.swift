@@ -10,11 +10,11 @@ import Foundation
 
 struct MockAdapter: BaseRequestAdapter {
     var route: String { "/planet" }
-    var environment: Environment { MockEnvironment() }
+    var environment: EnvironmentProvider { MockEnvironment() }
     var method: HTTPMethod { .get }
     var parameters: Parameters? { nil }
     var requestURLString: String {
-        environment.baseURL + route
+        environment.current.baseURL + route
     }
 }
 

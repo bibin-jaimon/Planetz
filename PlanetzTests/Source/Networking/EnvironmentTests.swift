@@ -10,7 +10,7 @@ import XCTest
 
 class EnvironmentTests: XCTestCase {
     func testDefaultEnvironment() {
-        let env: Environment = DefaultEnvironment()
-        XCTAssertEqual("https://swapi.dev/api", env.baseURL)
+        let env: EnvironmentProvider = MockEnvironment()
+        XCTAssertEqual("fake-endpoint", env.current.baseURL)
     }
 }

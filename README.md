@@ -34,10 +34,12 @@
     - AppAsset
     - Main
     - Source
-
-        - Models
-        - Views
-        - Controllers
+        - Features
+            - Feature1
+                - ViewModel 
+                - Models
+                - Views
+                - Controllers
         - Networking
             - Adapters
         - Components

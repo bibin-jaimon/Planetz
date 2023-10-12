@@ -44,7 +44,11 @@
 Clone this repo
 ```bash
 git clone git@github.com:bibin-jaimon/Planetz.git
+```
+```bash
 cd Planetz
+```
+```bash
 xed Planetz
 ```
 

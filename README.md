@@ -18,7 +18,7 @@
 - Added project level and target level xcconfigs.
 - `Testcoverage - 89.1%`
 - Used persistance UserDefault to store the data for offline support.
-- Architecture used is MVC. No third party libraries are used in the app.
+- Architecture used is MVVM. No third party libraries are used in the app.
 - Used Dependency injection for decoupling, testability, reusability etc.
 - Used progrmatic UI with UIKit and AutoLayout for constructing and configuring the views.
 - To run unit tests, open Xcode and select `Product > Test`

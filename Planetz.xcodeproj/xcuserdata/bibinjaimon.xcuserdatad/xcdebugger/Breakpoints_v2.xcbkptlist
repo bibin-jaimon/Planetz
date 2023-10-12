@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "331F418A-C178-4B0F-AB1B-B921D5C0B3DD"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "02B460FB-88DC-4E1E-AB59-580136EAB76B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Planetz/Source/Features/Home/View/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "viewWillAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA140FE3-B0D6-431B-845D-7964F2DF435D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Planetz/Source/Features/Home/View/HomeView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "stopLoader()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E4D0BC25-4F5D-431B-990C-7E9E2D4D10FF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Planetz/Source/Features/Home/ViewModel/HomeViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "fetchPlanetData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "862DE706-6BD6-41FA-AEC3-40106C8A5AA9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlanetzTests/Source/ViewModel/HomeViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "testHomeViewController_whenProvidedEmptyPlanet_planetArrayShouldHaveCorrectCount()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "862DE706-6BD6-41FA-AEC3-40106C8A5AA9 - 270d724ce0924d93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Planetz.Planet&gt;) -&gt; () in PlanetzTests.MockHomeViewModelTest.testHomeViewController_whenProvidedEmptyPlanet_planetArrayShouldHaveCorrectCount() -&gt; ()"
+                  moduleName = "PlanetzTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bibinjaimon/Developer/code/Planetz/PlanetzTests/Source/ViewModel/HomeViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "76">
+               </Location>
+               <Location
+                  uuid = "862DE706-6BD6-41FA-AEC3-40106C8A5AA9 - 270d724ce0924c72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Planetz.Planet&gt;) -&gt; () in PlanetzTests.MockHomeViewModelTest.testHomeViewController_whenProvidedEmptyPlanet_planetArrayShouldHaveCorrectCount() -&gt; ()"
+                  moduleName = "PlanetzTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bibinjaimon/Developer/code/Planetz/PlanetzTests/Source/ViewModel/HomeViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "88">
+               </Location>
+               <Location
+                  uuid = "862DE706-6BD6-41FA-AEC3-40106C8A5AA9 - 270d724ce0924d93"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Array&lt;Planetz.Planet&gt;) -&gt; () in PlanetzTests.MockHomeViewModelTest.testHomeViewController_whenProvidedEmptyPlanet_planetArrayShouldHaveCorrectCount() -&gt; ()"
+                  moduleName = "PlanetzTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bibinjaimon/Developer/code/Planetz/PlanetzTests/Source/ViewModel/HomeViewModelTests.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

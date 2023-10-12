@@ -6,3 +6,15 @@
 //
 
 import Foundation
+@testable import Planetz
+
+class MockHomeViewModel: HomeViewModel {
+    var isCalledFetchPlanetData = false
+    var onReceive: (([Planetz.Planet]) -> Void)?
+    
+    func fetchPlanetData() {
+        isCalledFetchPlanetData = true
+    }
+    
+    
+}

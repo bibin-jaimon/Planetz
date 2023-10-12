@@ -7,23 +7,25 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
     
-    private var planetServiceClinet: PlanetService
     private var dataStore: DataStoreProtocol
     private var homeView: HomeView?
     private var dataFormatter: DataFormatter
+    private var viewModel: HomeViewModel
     
-    private var planets: [Planet] = [] {
-        didSet {
-            self.updateHomeView(data: planets)
-        }
-    }
-    
-    init(planetServiceClinet: PlanetService, dataStore: DataStoreProtocol, dataFormatter: DataFormatter) {
-        self.planetServiceClinet = planetServiceClinet
+    init(
+        planetServiceClinet: PlanetService,
+        dataStore: DataStoreProtocol,
+        dataFormatter: DataFormatter
+    ) {
         self.dataStore = dataStore
         self.dataFormatter = dataFormatter
+        self.viewModel = HomeModel(
+            planetService: planetServiceClinet,
+            dataStore: dataStore,
+            dataFormatter: dataFormatter
+        )
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -38,45 +40,20 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.homeView?.startLoader()
-        fetchPlanetData({ [weak self] in
-            self?.homeView?.stopLoader()
-        })
-    }
-    
-    private func fetchPlanetData(_ completion: (() -> Void)? = nil) {
-        Task { [weak self] in
-            guard let strongSelf = self else { return }
-            let planets = await strongSelf.planetServiceClinet.fetchPlanets()
-            strongSelf.handle(planets)
-            completion?()
+
+        viewModel.onReceive = {[weak self] planets in
+            DispatchQueue.main.async {
+                self?.homeView?.update(planets: planets)
+                self?.homeView?.stopLoader()
+            }
         }
-    }
-    
-    /// To handle data from server and local storage
-    private func handle(_ planets: [Planet]) {
-        if planets.isEmpty {
-            self.planets = getSavedPlanets()
-            return
-        }
-        self.planets = planets
-        self.saveToDataStore(planets)
-    }
-    
-    private func updateHomeView(data: [Planet]) {
-        self.homeView?.update(planets: data)
-    }
-    
-    private func saveToDataStore(_ planets: [Planet]) {
-        guard let data = dataFormatter.encodeToData(planets) else { return }
-        dataStore.save(for: .planets, value: data)
-    }
-    
-    private func getSavedPlanets() -> [Planet] {
-        guard let data = dataStore.get(key: .planets) else { return [] }
-        guard let planets = dataFormatter.decodeToJSON(to: [Planet].self, for: data) else { return [] }
-        return planets
         
+        viewModel.fetchPlanetData()
     }
 
 }
@@ -98,13 +75,11 @@ extension HomeViewController {
         fileprivate init(instance: HomeViewController) {
             self.instance = instance
         }
-        
-        var planets: [Planet] { instance.planets }
-        
-        func fetchPlanetData(_ completion: (() -> Void)? = nil) {
-            instance.fetchPlanetData(completion)
+
+        func setHomeViewModel(model: HomeViewModel) {
+            instance.viewModel = model
         }
-        
+
         func getHomeView() -> HomeView? {
             instance.homeView
         }

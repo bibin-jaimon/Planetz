@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7B6846442A05418200CC5DD0"
-               BuildableName = "Planetz App.app"
+               BuildableName = "Planetz.app"
                BlueprintName = "Planetz"
                ReferencedContainer = "container:Planetz.xcodeproj">
             </BuildableReference>
@@ -73,7 +73,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B6846442A05418200CC5DD0"
-            BuildableName = "Planetz App.app"
+            BuildableName = "Planetz.app"
             BlueprintName = "Planetz"
             ReferencedContainer = "container:Planetz.xcodeproj">
          </BuildableReference>
@@ -90,7 +90,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "7B6846442A05418200CC5DD0"
-            BuildableName = "Planetz App.app"
+            BuildableName = "Planetz.app"
             BlueprintName = "Planetz"
             ReferencedContainer = "container:Planetz.xcodeproj">
          </BuildableReference>

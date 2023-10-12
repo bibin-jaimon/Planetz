@@ -9,43 +9,20 @@ import XCTest
 @testable import Planetz
 
 class HomeViewControllerTests: XCTestCase {
-    
-    func testHomeViewController_whenProvidedEmptyPlanet_planetArrayShouldHaveCorrectCount() {
 
-        let mockDataStore = MockDataStore()
-        let sut = HomeViewController(planetServiceClinet: EmptyPlanetServiceClinet(),
-                                     dataStore: mockDataStore,
-                                     dataFormatter: JSONFormatter())
-        
-        let expt = expectation(description: "TestHomeViewController")
-        sut.testSupport.fetchPlanetData {
-            let planetCount = sut.testSupport.planets.count
-            XCTAssertEqual(planetCount, 0)
-            XCTAssertFalse(mockDataStore.isCalledSaveMethodWithPlanetKey)
-            XCTAssertTrue(mockDataStore.isCalledToReadPersistingData)
-            expt.fulfill()
-        }
-
-        waitForExpectations(timeout: 10)
-        
-    }
-    
-    func testHomeViewController_whenProvidedPlanetData_planetArrayShouldHaveCorrectCount() {
-        let mockDataStore = MockDataStore()
+    func test() {
         let sut = HomeViewController(planetServiceClinet: MockPlanetServiceClinet(),
-                                     dataStore: mockDataStore,
+                                     dataStore: MockDataStore(),
                                      dataFormatter: JSONFormatter())
+        let mockHomeViewModel = MockHomeViewModel()
         
-        let expt = expectation(description: "TestHomeViewController")
-        sut.testSupport.fetchPlanetData {
-            let planetCount = sut.testSupport.planets.count
-            XCTAssertEqual(planetCount, 1)
-            XCTAssertTrue(mockDataStore.isCalledSaveMethodWithPlanetKey)
-            expt.fulfill()
-        }
-        waitForExpectations(timeout: 10)
+        sut.testSupport.setHomeViewModel(model: mockHomeViewModel)
+        
+        sut.viewWillAppear(true)
+        
+        XCTAssertEqual(true, mockHomeViewModel.isCalledFetchPlanetData)
     }
-    
+
     func testHomeViewController_whenCalledLoadView_viewShouldHaveValue() {
         
         let sut = HomeViewController(planetServiceClinet: MockPlanetServiceClinet(),

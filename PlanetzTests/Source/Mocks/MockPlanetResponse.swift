@@ -14,7 +14,10 @@ struct MockPlanetResponse {
     
     static var planets: [Planet] {
         let formatter: DataFormatter = JSONFormatter()
-        let json = formatter.decodeToJSON(to: PlanetListResponseModel.self, for: MockPlanetResponse.sampleData.data(using: .utf8)!)
+        let json = formatter.decodeToJSON(
+            to: PlanetListResponseModel.self,
+            for: MockPlanetResponse.sampleData.data(using: .utf8)!
+        )
         return json!.results
     }
 }

@@ -29,7 +29,7 @@ class PlanetServiceClient: PlanetService {
     }
     
     func fetchPlanets() async -> [Planet] {
-        let adapter = PlanetListRequestAdapter(path: "/planets", method: .get, environment: environment)
+        let adapter = PlanetListRequest(route: "/planets", method: .get, environment: environment)
         guard let result = try? await networking.fetch(adapter) else { return [] }
         
         switch result {

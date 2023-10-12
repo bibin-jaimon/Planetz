@@ -15,11 +15,14 @@ class PathRequestAdapterTests: XCTestCase {
         let expectedURL: String = "https://swapi.dev/api/planet"
         let expectedHttpMethod: String = "GET"
 
-        struct MockPathRequestAdapter: PathRequestAdapter {
-            var path: String { "/planet" }
+        struct MockPathRequestAdapter: BaseRequestAdapter {
+            var route: String { "/planet" }
             var environment: Environment { MockEnvironment() }
             var method: HTTPMethod { .get }
             var parameters: Parameters? { nil }
+            var requestURLString: String {
+                environment.baseURL + route
+            }
         }
 
         let sut: BaseRequestAdapter = MockPathRequestAdapter()

@@ -8,15 +8,19 @@
 import Foundation
 @testable import Planetz
 
-struct MockAdapter: PathRequestAdapter {
-    var path: String { "/planet" }
+struct MockAdapter: BaseRequestAdapter {
+    var route: String { "/planet" }
     var environment: Environment { MockEnvironment() }
     var method: HTTPMethod { .get }
     var parameters: Parameters? { nil }
+    var requestURLString: String {
+        environment.baseURL + route
+    }
 }
 
-struct MockEmptyURLRequestAdapter: UrlRequestAdapter {
-    var urlString: String { "" }
+struct MockEmptyRequestAdapter: BaseRequestAdapter {
+    var route: String { "" }
+    var requestURLString: String { "" }
     var method: HTTPMethod { .get }
     var parameters: Parameters? { nil }
 }

@@ -13,6 +13,8 @@ class BaseRequestAdapterTest: XCTestCase {
     func testBaseRequestAdapter_returnsGetURLRequest() {
         
         struct MockBaseRequestAdapter: BaseRequestAdapter {
+            var route: String { "/sample" }
+            
             var method: HTTPMethod { .get }
             
             var parameters: Parameters? { [

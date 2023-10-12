@@ -15,8 +15,9 @@ class UrlRequestAdapterTests: XCTestCase {
         let expectedURL: String = "https://swapi.dev/api"
         let expectedHttpMethod: String = "GET"
 
-        struct MockUrlRequestAdapter: UrlRequestAdapter {
-            var urlString: String { "https://swapi.dev/api" }
+        struct MockUrlRequestAdapter: BaseRequestAdapter {
+            var route: String { "/planets" }
+            var requestURLString: String { "https://swapi.dev/api" }
             var method: HTTPMethod { .get }
             var parameters: Parameters? { nil }
         }

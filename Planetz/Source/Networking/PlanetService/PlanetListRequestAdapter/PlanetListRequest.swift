@@ -7,9 +7,12 @@
 
 import Foundation
 
-struct PlanetListRequestAdapter: PathRequestAdapter {
-    var path: String
+struct PlanetListRequest: BaseRequestAdapter {
+    var route: String
     var method: HTTPMethod
     var parameters: Parameters?
     var environment: Environment
+    var requestURLString: String {
+        environment.baseURL + route
+    }
 }

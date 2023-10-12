@@ -11,7 +11,7 @@ import XCTest
 final class NetworkingTests: XCTestCase {
     
     func testNetworking_whenEmptyURLProvided_returnsError() async throws {
-        let mockAdapter = MockEmptyURLRequestAdapter()
+        let mockAdapter = MockEmptyRequestAdapter()
         let sut = Networking(session: .shared)
         
         let result = try await sut.fetch(mockAdapter)

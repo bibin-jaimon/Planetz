@@ -14,8 +14,6 @@
 		7B6400A02A0581AC00A66595 /* PlanetListResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */; };
 		7B6400A22A05851A00A66595 /* PlanetListRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A12A05851A00A66595 /* PlanetListRequest.swift */; };
 		7B6400A62A06481D00A66595 /* BaseRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A52A06481D00A66595 /* BaseRequestAdapter.swift */; };
-		7B6400A82A0648C500A66595 /* PathRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A72A0648C500A66595 /* PathRequestAdapter.swift */; };
-		7B6400AA2A06495400A66595 /* UrlRequestAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6400A92A06495400A66595 /* UrlRequestAdapter.swift */; };
 		7B6846492A05418200CC5DD0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6846482A05418200CC5DD0 /* AppDelegate.swift */; };
 		7B68464B2A05418200CC5DD0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68464A2A05418200CC5DD0 /* SceneDelegate.swift */; };
 		7B68464D2A05418200CC5DD0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B68464C2A05418200CC5DD0 /* HomeViewController.swift */; };
@@ -70,8 +68,6 @@
 		7B64009F2A0581AC00A66595 /* PlanetListResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListResponseModel.swift; sourceTree = "<group>"; };
 		7B6400A12A05851A00A66595 /* PlanetListRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetListRequest.swift; sourceTree = "<group>"; };
 		7B6400A52A06481D00A66595 /* BaseRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequestAdapter.swift; sourceTree = "<group>"; };
-		7B6400A72A0648C500A66595 /* PathRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathRequestAdapter.swift; sourceTree = "<group>"; };
-		7B6400A92A06495400A66595 /* UrlRequestAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlRequestAdapter.swift; sourceTree = "<group>"; };
 		7B6846452A05418200CC5DD0 /* Planetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planetz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B6846482A05418200CC5DD0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7B68464A2A05418200CC5DD0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -228,8 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				7B6400A52A06481D00A66595 /* BaseRequestAdapter.swift */,
-				7B6400A72A0648C500A66595 /* PathRequestAdapter.swift */,
-				7B6400A92A06495400A66595 /* UrlRequestAdapter.swift */,
 			);
 			path = Adapters;
 			sourceTree = "<group>";
@@ -528,8 +522,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B6400A82A0648C500A66595 /* PathRequestAdapter.swift in Sources */,
-				7B6400AA2A06495400A66595 /* UrlRequestAdapter.swift in Sources */,
 				7B6400A62A06481D00A66595 /* BaseRequestAdapter.swift in Sources */,
 				7BB118902A06CF91007E1A38 /* PlanetListCell.swift in Sources */,
 				7B68464D2A05418200CC5DD0 /* HomeViewController.swift in Sources */,

@@ -16,6 +16,7 @@ enum HTTPMethod {
 
 /// The protocol to be used for creating URLRequest
 protocol BaseRequestAdapter {
+    var route: String { get }
     /// The HTTPMethod for the request
     var method: HTTPMethod { get }
     

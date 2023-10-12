@@ -8,4 +8,5 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-PRODUCT_NAME = Planetz App
+// Project level release config file
+PRODUCT_NAME = Planetz

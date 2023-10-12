@@ -8,4 +8,5 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
+// Target level debug config file
 PRODUCT_BUNDLE_IDENTIFIER = com.planetz.mobile.qa
